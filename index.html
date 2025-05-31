@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">MyPortfolio</a>
+
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/dipesh777/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+
+  <section class="home" id="home">
+    <div class="blurry-card">
+      <img src="assets/profile/1.png" alt="Profile" />
+      <h2 id="animated-heading">Hi, I'm <br>Dipesh Mandal</h2>
+      <p>
+        DevOps & Cloud Engineer specializing in AWS, CI/CD, & infrastructure automation. Dedicated to building
+        resilient systems, streamlining deployments, and driving operational excellence.
+      </p>
+
+      <!-- Buttons row -->
+      <div class="btn-row">
+        <a href="assets/resume/resume.pdf" target="_blank" onclick="openResume(event)" class="btn">View Resume</a>
+        <a href="#contact" class="btn btn-contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <!-- Left: Image -->
+      <div class="about-image">
+        <img src="assets/profile/2.jpg" alt="Dipesh Mandal">
+      </div>
+
+      <!-- Right: Description and Education -->
+      <div class="about-content">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-description">
+          Hi, I'm <strong>Dipesh Mandal</strong>, a passionate Cloud and DevOps Engineer with expertise in designing and
+          deploying highly available, fault-tolerant, and secure cloud architectures using industry-leading tools and
+          platforms. With expertise in Cloud Computing, DevOps methodologies, and Automation, I thrive on solving
+          complex problems and optimizing workflows to achieve outstanding results.
+          <br><br>
+          I honed my skills in managing AWS infrastructure, automating workflows using GitHub Action, Jenkins,
+          Terraform, and Ansible — optimizing server performance on Linux platforms, reducing operational costs by 25%
+          and minimizing downtime. Proficient with tools like Docker, Kubernetes, Jenkins, and monitoring solutions such
+          as Prometheus and Grafana, I am driven to explore innovative cloud solutions and continuously enhance DevOps
+          processes.
+        </p>
+
+        <div class="education-section">
+          <h3>Education</h3>
+          <ul>
+            <li><strong>B.Tech in Computer Science</strong><br>CGPA: 7.89 (2021 - 2025)</li>
+            <li><strong>Diploma in Computer Science</strong><br>CGPA: 7.45 (2018 - 2021)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="experience-section" id="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Orion Infosolutions, Jaipur <span>— DevOps Cum System Admin Intern</span></h3>
+          <p class="date">Feb 2025 - Present</p>
+          <ul>
+            <li>Deployed Node.js applications on AWS using a Multi-AZ architecture with Load Balancer, VPC, and Security
+              Groups to ensure high availability and cost efficiency.</li>
+            <li>Enhanced AWS resource efficiency by identifying and decommissioning unused EC2 instances and idle
+              components, cutting infrastructure costs by 30%.</li>
+            <li>Built and maintained CI/CD pipelines using GitHub Actions, Git, and Docker, reducing deployment times by
+              50%.</li>
+            <li>Implemented a multi-branch Git strategy to prevent merge conflicts and streamline delivery.</li>
+            <li>Automated system backups and log cleanup using shell scripts to maintain optimal system health and
+              performance.</li>
+            <li>Monitored infrastructure using Grafana and AWS CloudWatch to enable proactive issue resolution.</li>
+            <li>Worked closely with IT operations to ensure the stability and reliability of production environments,
+              reducing downtime by 50%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Phoenix Advanced Software Pvt. Ltd, Jaipur <span>— Process Associate</span></h3>
+        <p class="date">Sep 2021 - May 2023</p>
+        <ul>
+          <li>Provisioned servers (AWS, GCP, VPS) and secured Linux systems.</li>
+          <li>Utilized Amazon S3 to reduce overhead and improve availability.</li>
+          <li>Maintained optimized and reliable Linux environments.</li>
+          <li>Automated admin tasks to improve efficiency and reduce errors.</li>
+        </ul>
+      </div>
+    </div> -->
+
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <h2 class="section-title skill-heading">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="assets/skills/aws.png" alt="AWS"><span>Aws</span></div>
+      <div class="skill-card"><img src="assets/skills/azure.png" alt="Azure"><span>Azure</span></div>
+      <div class="skill-card"><img src="assets/skills/python.png" alt="Python"><span>Python</span></div>
+      <div class="skill-card"><img src="assets/skills/docker.png" alt="Docker"><span>Docker</span></div>
+      <div class="skill-card"><img src="assets/skills/kubernetes.png" alt="Kubernetes"><span>Kubernetes</span></div>
+      <div class="skill-card"><img src="assets/skills/helm.png" alt="Helm"><span>Helm</span></div>
+      <div class="skill-card"><img src="assets/skills/ansible.png" alt="Ansible"><span>Ansible</span></div>
+      <div class="skill-card"><img src="assets/skills/terraform.png" alt="Terraform"><span>Terraform</span></div>
+      <div class="skill-card"><img src="assets/skills/Bash.png" alt="Scripting"><span>Scripting</span></div>
+      <div class="skill-card"><img src="assets/skills/jenkins.png" alt="Jenkins"><span>Jenkins</span></div>
+      <div class="skill-card"><img src="assets/skills/prometheus.png" alt="Prometheus"><span>Prometheus</span></div>
+      <div class="skill-card"><img src="assets/skills/grafana.png" alt="Grafana"><span>Grafana</span></div>
+      <div class="skill-card"><img src="assets/skills/sonarqube.png" alt="SonarQube"><span>SonarQube</span></div>
+      <div class="skill-card"><img src="assets/skills/trivy.png" alt="Trivy"><span>Trivy</span></div>
+      <div class="skill-card"><img src="assets/skills/owasp.png" alt="OWASP"><span>OWASP</span></div>
+      <div class="skill-card"><img src="assets/skills/git.png" alt="Git"><span>Git</span></div>
+      <div class="skill-card"><img src="assets/skills/mysql.png" alt="MySQL"><span>MySQL</span></div>
+      <div class="skill-card"><img src="assets/skills/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
+      <div class="skill-card"><img src="assets/skills/html.png" alt="html"><span>HTML</span></div>
+      <div class="skill-card"><img src="assets/skills/css.png" alt="css"><span>css</span></div>
+      <div class="skill-card"><img src="assets/skills/java.png" alt="java"><span>Java</span></div>
+    </div>
+  </section>
+
+
+  <section class="projects" id="projects">
+    <h2 class="section-title">My <span>Projects</span></h2>
+
+    <div class="projects-wrapper">
+      <button class="pagination-arrow left-arrow" aria-label="Previous project" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <div class="project-grid">
+        <a href="projects/project1.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/projects/1.png" alt="AWS 3-Tier Architecture" />
+            <!-- <div class="date-badge">
+              <span>2024</span>
+              <small>June</small>
+            </div> -->
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">AWS 3-Tier Architecture Deployment</h3>
+            <!-- <p class="project-desc">
+              Developed a secure 3-tier architecture on AWS using VPC, EC2, RDS, and S3 with Route 53 and SSL.
+            </p> -->
+          </div>
+        </a>
+
+        <a href="projects/project2.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/projects/2.png" alt="Project 2" />
+            <!-- <div class="date-badge">
+              <span>2023</span>
+              <small>Dec</small>
+            </div> -->
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">End-to-End DevOps Pipeline for Zomato Application</h3>
+            <!-- <p class="project-desc">Built a DevOps pipeline for the Zomato app to automate integration, testing,
+              deployment, and monitoring.</p> -->
+          </div>
+        </a>
+
+        <a href="projects/project3.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/projects/3.png" alt="Project 3" />
+            <!-- <div class="date-badge">
+              <span>2022</span>
+              <small>Oct</small>
+            </div> -->
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Real-Time System Monitoring with Flask, Docker, and AWS EKS</h3>
+            <!-- <p class="project-desc">Developed a Flask app to monitor CPU and memory usage using psutil, containerized
+              with Docker, pushed to ECR, and deployed on EKS for scalable management.</p> -->
+          </div>
+        </a>
+
+        <a href="projects/project4.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/projects/4.png" alt="Project 4" />
+            <!-- <div class="date-badge">
+              <span>2021</span>
+              <small>Aug</small>
+            </div> -->
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Responsive Serverless Web Application Deployment Using Aws Lambda, API Gateway, DynamoDB, CloudFront, and S3</h3>
+            <!-- <p class="project-desc">Description for project 4.</p> -->
+          </div>
+        </a>
+        <a href="projects/project5.html" class="project-card">
+          <div class="project-image">
+            <img src="assets/projects/5.png" alt="Project 4" />
+            <!-- <div class="date-badge">
+              <span>2021</span>
+              <small>Aug</small>
+            </div> -->
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Design and Manage infrastructure with Terraform while automating deployment workflows using GitHub Actions</h3>
+            <!-- <p class="project-desc">Description for project 4.</p> -->
+          </div>
+        </a>
+      </div>
+
+      <button class="pagination-arrow right-arrow" aria-label="Next project" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+
+
+  <section class="contact-footer-wrapper" id="contact">
+    <div class="contact-section">
+      <h2 class="section-title">Get in Touch</h2>
+
+      <form action="https://formspree.io/f/myzwrvdp" method="POST" class="contact-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Status message -->
+      <p id="form-status" style="margin-top: 1rem; color: green; display: none;">
+        Thank you! Your message has been sent.
+      </p>
+    </div>
+
+    <footer class="footer-section">
+      <h2 class="footer-title">Let's Connect</h2>
+      <div class="footer-socials">
+        <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dipesh-mandal-a39323285/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p>&copy; 2025 Dipesh Mandal. All rights reserved.</p>
+    </footer>
+  </section>
+
+  <!-- External animation and logic script -->
+  <script src="scripts.js"></script>
+</body>
+
+</html>

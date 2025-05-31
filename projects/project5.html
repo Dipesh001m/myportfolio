@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS 3-Tier Architecture Deployment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../styles/project1.css" />
+  <link rel="stylesheet" href="project-details.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo">MyPortfolio</a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/dipesh777/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- Project Detail Content -->
+<main class="project-detail">
+  <h1>Design and Manage Infrastructure with Terraform and GitHub Actions</h1>
+
+  <section class="project-overview">
+    <h2>Overview</h2>
+    <p>
+      This project automated AWS infrastructure provisioning using Terraform, ensuring consistency and reducing manual errors. It deployed VPCs, EC2 instances, and Application Load Balancer (ALB) across multiple availability zones for high availability and fault tolerance. GitHub Actions was used to integrate CI/CD workflows, enabling seamless deployments and automated infrastructure updates. The outcome was a scalable, reliable, and fully automated cloud environment.
+    </p>
+  </section>
+
+  <img src="../assets/projects/5.png" alt="Project Execution Flow" class="project-image" />
+
+  <section class="project-tech">
+    <h2>Technologies</h2>
+    <p><strong>Infrastructure as Code (IaC):</strong> Terraform</p>
+    <p><strong>Version Control:</strong> GitHub</p>
+    <p><strong>CI/CD:</strong> GitHub Actions</p>
+    <p><strong>Cloud Provider:</strong> AWS (VPC, EC2, ALB, Subnets, Security Groups)</p>
+    <p><strong>IDE:</strong> Visual Studio Code (VSCode)</p>
+  </section>
+
+  <section class="project-steps">
+    <h2>Deployment Steps</h2>
+
+    <h3>1. Infrastructure Code Development</h3>
+    <ul>
+      <li>Write Terraform code to define AWS infrastructure (VPC, subnets, internet gateway, security groups, EC2, and ALB).</li>
+      <li>Test Terraform plan locally in VSCode.</li>
+    </ul>
+
+    <h3>2. Push to GitHub Repository</h3>
+    <ul>
+      <li>Terraform code is pushed to a GitHub repository for version control and CI/CD integration.</li>
+    </ul>
+
+    <h3>3. GitHub Actions CI/CD Pipeline</h3>
+    <ul>
+      <li>CI/CD pipeline is triggered on every push or pull request.</li>
+      <li>Pipeline runs `terraform init`, `plan`, and `apply` to provision infrastructure automatically.</li>
+    </ul>
+
+    <h3>4. AWS Resource Provisioning</h3>
+    <ul>
+      <li>Resources are provisioned in AWS in the <code>us-east-1</code> region across two availability zones.</li>
+      <li>Public subnets, security groups, and internet gateway are configured for external access.</li>
+      <li>EC2 instances are launched and load balanced via ALB.</li>
+    </ul>
+
+    <h3>5. Validation & Scaling</h3>
+    <ul>
+      <li>Test infrastructure access via ALB DNS name.</li>
+      <li>Terraform allows easy scaling and updates via code modifications and re-deployment.</li>
+    </ul>
+  </section>
+
+  <a href="https://github.com/Dipesh001m/vpc-terraform-github-action?tab=readme-ov-file" target="_blank" class="btn-github">
+    View GitHub Repository
+  </a>
+</main>
+
+
+
+  <!-- Contact + Footer -->
+  
+  <section class="contact-footer-wrapper" id="contact">
+  <div class="contact-section">
+    <h2 class="section-title">Get in Touch</h2>
+
+    <form 
+      action="https://formspree.io/f/myzwrvdp" 
+      method="POST" 
+      class="contact-form"
+    >
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Status message -->
+    <p id="form-status" style="margin-top: 1rem; color: green; display: none;">
+      Thank you! Your message has been sent.
+    </p>
+  </div>
+
+  <footer class="footer-section">
+    <h2 class="footer-title">Let's Connect</h2>
+    <div class="footer-socials">
+      <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/dipesh-mandal-a39323285/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Dipesh Mandal. All rights reserved.</p>
+  </footer>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      navLinks.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    navLinks.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  }
+});
+</script>
+
+<script>
+// Contact Form Submission
+  const form = document.querySelector('.contact-form');
+  const statusMessage = document.getElementById('form-status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        statusMessage.style.color = 'green';
+        statusMessage.textContent = 'Thank you! Your message has been sent.';
+        statusMessage.style.display = 'block';
+        form.reset();
+      } else {
+        statusMessage.style.color = 'red';
+        statusMessage.textContent = 'Oops! There was a problem sending your message.';
+        statusMessage.style.display = 'block';
+      }
+
+      // Auto-hide the message after 5 seconds
+      setTimeout(() => {
+        statusMessage.style.display = 'none';
+      }, 5000);
+    });
+  });
+</script>
+</body>
+</html>

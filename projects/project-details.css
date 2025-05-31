@@ -1,0 +1,71 @@
+.project-detail {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.project-detail h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .project-detail h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
+
+.project-overview,
+.project-tech,
+.project-steps {
+  margin-bottom: 30px;
+}
+
+.project-overview p,
+.project-tech p,
+.project-steps p,
+.project-steps ul {
+  color: #d3d3d3;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.project-steps h3 {
+  margin-top: 1.5rem;
+  color: #ffffff;
+}
+
+.project-steps ul {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.btn-github {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.btn-github:hover {
+  background: linear-gradient(90deg, #5a0ebf, #1c63d3);
+}
+
+
+

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS 3-Tier Architecture Deployment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../styles/project1.css" />
+  <link rel="stylesheet" href="project-details.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo">MyPortfolio</a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/dipesh777/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- Project Detail Content -->
+<main class="project-detail">
+  <h1>AWS 3-Tier Architecture Deployment</h1>
+
+  <section class="project-overview">
+    <h2>Overview</h2>
+    <p>
+      This project sets up a secure and scalable 3-tier web application on AWS using key services: VPC, EC2, RDS, S3, IAM, Route 53, and Certificate Manager.
+      It ensures high availability, security, and fault tolerance.
+    </p>
+  </section>
+
+  <img src="../assets/projects/1.png" alt="AWS Architecture" class="project-image" />
+
+  <section class="project-tech">
+    <h2>Technologies</h2>
+    <p><strong>AWS Services:</strong> VPC, EC2, RDS, S3, IAM, Route 53, Certificate Manager</p>
+    <p><strong>Tools:</strong> AWS Console, AWS CLI</p>
+    <p><strong>Security:</strong> IAM Roles, SSL Certificates, Private Subnets</p>
+    <p><strong>Strategy:</strong> Multi-AZ deployment</p>
+  </section>
+
+
+  <section class="project-steps">
+    <h2>Deployment Steps</h2>
+
+    <h3>1. VPC Setup</h3>
+    <p>Create a custom VPC with public and private subnets for different application tiers.</p>
+
+    <h3>2. S3 & IAM Role</h3>
+    <p>Upload app code to S3 and create IAM roles with appropriate permissions for EC2 access to the bucket.</p>
+
+    <h3>3. Database Tier (RDS)</h3>
+    <ul>
+      <li>Launch an RDS instance (MySQL).</li>
+      <li>Create a database <code>webappdb</code> and a <code>transactions</code> table.</li>
+      <li>Update <code>DbConfig.js</code> with DB credentials and upload it to S3.</li>
+    </ul>
+
+    <h3>4. Application Tier</h3>
+    <ul>
+      <li>Launch EC2 in a private subnet.</li>
+      <li>Install MySQL client, Node.js, and PM2.</li>
+      <li>Download code from S3, install dependencies, and start the app using PM2.</li>
+      <li>Set up an internal load balancer.</li>
+      <li>Update and upload <code>nginx.conf</code> to route to internal LB DNS.</li>
+    </ul>
+
+    <h3>5. Web Tier</h3>
+    <ul>
+      <li>Launch EC2 in a public subnet.</li>
+      <li>Install Node.js, and pull frontend build code from S3.</li>
+      <li>Configure Nginx to proxy traffic to internal load balancer.</li>
+      <li>Set up an external load balancer, map domain using Route 53, and apply SSL via ACM.</li>
+    </ul>
+
+    <h3>6. Testing</h3>
+    <p>Open the public IP or domain of the web tier. Test the full app flow by entering data and verifying functionality end-to-end.</p>
+  </section>
+
+  <a href="https://github.com/Dipesh001m/3tier-cloud-app" target="_blank" class="btn-github">
+    View GitHub Repository
+  </a>
+</main>
+
+
+
+  <!-- Contact + Footer -->
+  
+  <section class="contact-footer-wrapper" id="contact">
+  <div class="contact-section">
+    <h2 class="section-title">Get in Touch</h2>
+
+    <form 
+      action="https://formspree.io/f/myzwrvdp" 
+      method="POST" 
+      class="contact-form"
+    >
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Status message -->
+    <p id="form-status" style="margin-top: 1rem; color: green; display: none;">
+      Thank you! Your message has been sent.
+    </p>
+  </div>
+
+  <footer class="footer-section">
+    <h2 class="footer-title">Let's Connect</h2>
+    <div class="footer-socials">
+      <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/dipesh-mandal-a39323285/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Dipesh Mandal. All rights reserved.</p>
+  </footer>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      navLinks.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    navLinks.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  }
+});
+</script>
+
+<script>
+// Contact Form Submission
+  const form = document.querySelector('.contact-form');
+  const statusMessage = document.getElementById('form-status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        statusMessage.style.color = 'green';
+        statusMessage.textContent = 'Thank you! Your message has been sent.';
+        statusMessage.style.display = 'block';
+        form.reset();
+      } else {
+        statusMessage.style.color = 'red';
+        statusMessage.textContent = 'Oops! There was a problem sending your message.';
+        statusMessage.style.display = 'block';
+      }
+
+      // Auto-hide the message after 5 seconds
+      setTimeout(() => {
+        statusMessage.style.display = 'none';
+      }, 5000);
+    });
+  });
+</script>
+</body>
+</html>

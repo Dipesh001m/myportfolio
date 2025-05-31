@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS 3-Tier Architecture Deployment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../styles/project1.css" />
+  <link rel="stylesheet" href="project-details.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="../index.html" class="logo">MyPortfolio</a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/dipesh777/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- Project Detail Content -->
+<main class="project-detail">
+  <h1>Real-Time System Monitoring with Flask, Docker, and AWS EKS</h1>
+
+  <section class="project-overview">
+    <h2>Overview</h2>
+    <p>
+      Developed a Python-based Flask application that monitors CPU and memory usage in real-time using the <code>psutil</code> library. The application is containerized with Docker, and the image is pushed to Amazon ECR. It is then deployed to Amazon EKS for efficient, scalable container orchestration and monitoring.
+    </p>
+  </section>
+
+  <img src="../assets/projects/3.png" alt="System Monitoring Architecture" class="project-image" />
+
+  <section class="project-tech">
+    <h2>Technologies</h2>
+    <p><strong>Application:</strong> Python, Flask, psutil</p>
+    <p><strong>Containerization:</strong> Docker</p>
+    <p><strong>Image Registry:</strong> Amazon ECR</p>
+    <p><strong>Deployment:</strong> Amazon EKS, Kubernetes</p>
+    <p><strong>Infrastructure:</strong> Amazon EC2</p>
+    <p><strong>Automation:</strong> Python (Boto3)</p>
+  </section>
+
+  <section class="project-steps">
+    <h2>Deployment Steps</h2>
+
+    <h3>1. Build the Flask Monitoring App</h3>
+    <ul>
+      <li>Created a Flask app that collects system resource metrics using <code>psutil</code>.</li>
+    </ul>
+
+    <h3>2. Dockerization</h3>
+    <ul>
+      <li>Wrote a Dockerfile to containerize the Flask application.</li>
+      <li>Built and tested the Docker container locally.</li>
+    </ul>
+
+    <h3>3. Push Image to Amazon ECR</h3>
+    <ul>
+      <li>Used Boto3 to automate the ECR login and image push process.</li>
+      <li>Pushed the Docker image to a private ECR repository.</li>
+    </ul>
+
+    <h3>4. Deploy on Amazon EKS</h3>
+    <ul>
+      <li>Created Kubernetes deployment and service manifests.</li>
+      <li>Deployed the image from ECR to EKS for high availability and scaling.</li>
+    </ul>
+  </section>
+
+  <a href="https://github.com/Dipesh001m/Monitoring-App" target="_blank" class="btn-github">
+    View GitHub Repository
+  </a>
+</main>
+
+
+  <!-- Contact + Footer -->
+  
+  <section class="contact-footer-wrapper" id="contact">
+  <div class="contact-section">
+    <h2 class="section-title">Get in Touch</h2>
+
+    <form 
+      action="https://formspree.io/f/myzwrvdp" 
+      method="POST" 
+      class="contact-form"
+    >
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Status message -->
+    <p id="form-status" style="margin-top: 1rem; color: green; display: none;">
+      Thank you! Your message has been sent.
+    </p>
+  </div>
+
+  <footer class="footer-section">
+    <h2 class="footer-title">Let's Connect</h2>
+    <div class="footer-socials">
+      <a href="https://github.com/Dipesh001m"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/dipesh-mandal-a39323285/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/dip_esh__m/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2025 Dipesh Mandal. All rights reserved.</p>
+  </footer>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      navLinks.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    navLinks.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  }
+});
+</script>
+
+<script>
+// Contact Form Submission
+  const form = document.querySelector('.contact-form');
+  const statusMessage = document.getElementById('form-status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        statusMessage.style.color = 'green';
+        statusMessage.textContent = 'Thank you! Your message has been sent.';
+        statusMessage.style.display = 'block';
+        form.reset();
+      } else {
+        statusMessage.style.color = 'red';
+        statusMessage.textContent = 'Oops! There was a problem sending your message.';
+        statusMessage.style.display = 'block';
+      }
+
+      // Auto-hide the message after 5 seconds
+      setTimeout(() => {
+        statusMessage.style.display = 'none';
+      }, 5000);
+    });
+  });
+</script>
+</body>
+</html>
