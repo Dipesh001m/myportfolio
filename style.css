@@ -898,15 +898,18 @@ html {
   background-color: #111827;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* smaller min width */
-  gap: 1rem;  /* smaller gap */
-  max-width: 1000px; /* smaller max width */
-  margin: 0 auto;
-  padding: 0 15px; /* slightly less padding */
+.projects-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
 
 /* Initial state */
 .project-grid {
@@ -931,32 +934,6 @@ html {
   0%   { transform: translateY(0) scale(1); }
   50%  { transform: translateY(0) scale(1.05); }
   100% { transform: translateY(0) scale(1); }
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .project-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    padding: 0 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .project-grid {
-    grid-template-columns: 1fr; /* Single column on tablets and smaller */
-    padding: 0 10px;
-  }
-
-  .project-card {
-    margin: 0 auto;
-    max-width: 400px; /* Optional: limit max width */
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
 }
 
 .project-card {
@@ -991,29 +968,6 @@ html {
   transform: scale(1.05);
 }
 
-.date-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #f97316;
-  color: white;
-  border-radius: 6px;
-  padding: 4px 8px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1;
-}
-
-.date-badge span {
-  font-size: 16px;
-  font-weight: bold;
-  display: block;
-}
-
-.date-badge small {
-  font-size: 12px;
-}
-
 .project-content {
   padding: 16px;
   color: white;
@@ -1039,20 +993,11 @@ html {
   color: #f3f4f6;
 }
 
-
-.projects-wrapper {
+.pagination-controls {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 20px; /* spacing between arrows and grid */
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  flex-grow: 1; /* grow to fill space */
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .pagination-arrow {
@@ -1067,7 +1012,6 @@ html {
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-  flex-shrink: 0;
 }
 
 .pagination-arrow svg {
@@ -1083,40 +1027,15 @@ html {
   pointer-events: none;
 }
 
-
-/* Medium screen adjustments */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .projects-wrapper {
-    gap: 15px; /* maybe reduce arrow-grid gap */
-  }
-
+/* Responsive adjustments */
+@media (max-width: 1024px) {
   .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* smaller min width */
-    gap: 1rem; /* reduce gap */
-    max-width: 900px; /* reduce max width a bit */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     padding: 0 15px;
-  }
-
-  .project-card {
-    max-width: none; /* reset any width limits */
-    margin: 0; /* reset margin */
-  }
-
-  .pagination-arrow {
-    width: 36px;
-    height: 36px;
   }
 }
 
-
 @media (max-width: 768px) {
-  /* Stack grid and arrows vertically */
-  .projects-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .project-grid {
     display: flex;
     overflow-x: auto;
@@ -1125,8 +1044,6 @@ html {
     gap: 2rem;
     padding-left: 10px;
     padding-right: 10px;
-    width: 100%;
-    justify-content: flex-start;
   }
 
   .project-card {
@@ -1136,19 +1053,22 @@ html {
     margin: 0;
   }
 
-  /* Arrows shown below and centered horizontally */
-  .pagination-controls {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
+  
+  .pagination-controls {
+    margin-top: 20px;
+  }
+}
 
-  .pagination-arrow {
-    display: flex;
-    width: 45px;
-    height: 45px;
-    margin: 0;
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    padding: 0 15px;
   }
 }
 
