@@ -829,7 +829,7 @@ html {
 .about-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 30px;
   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.507);
   opacity: 0;
   animation: fadeInZoom 1s ease-out forwards;
