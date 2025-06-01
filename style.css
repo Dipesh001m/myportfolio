@@ -1130,7 +1130,7 @@ html {
   }
 
   .project-card {
-    min-width: 90vw;
+    min-width: 87vw;
     max-width: 90vw;
     scroll-snap-align: center;
     margin: 0;
