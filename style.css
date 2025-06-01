@@ -1110,31 +1110,49 @@ html {
 }
 
 
-/* Hide arrows and enable horizontal scroll on small screens */
 @media (max-width: 768px) {
-  /* Hide pagination arrows */
-  .pagination-arrow {
-    display: none;
+  /* Stack grid and arrows vertically */
+  .projects-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Make project grid horizontally scrollable */
   .project-grid {
-    display: flex;              /* switch from grid to flex */
-    overflow-x: auto;           /* enable horizontal scroll */
-    scroll-snap-type: x mandatory; /* snap scrolling */
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    gap: 1rem;                  /* spacing between cards */
-    padding-left: 10px;         /* optional padding */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 2rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    justify-content: flex-start;
   }
 
-  /* Each project card acts as a snap point and sized for one card width */
   .project-card {
-    min-width: 90vw;           /* almost full viewport width */
-    max-width: 90vw;           /* prevent growing larger */
-    scroll-snap-align: start;  /* snap start of card */
-    margin: 0;                 /* reset margin */
+    min-width: 90vw;
+    max-width: 90vw;
+    scroll-snap-align: center;
+    margin: 0;
+  }
+
+  /* Arrows shown below and centered horizontally */
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .pagination-arrow {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    margin: 0;
   }
 }
+
+
 
 
 

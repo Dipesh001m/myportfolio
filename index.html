@@ -164,99 +164,79 @@
 
 
   <section class="projects" id="projects">
-    <h2 class="section-title">My <span>Projects</span></h2>
+  <h2 class="section-title">My <span>Projects</span></h2>
 
-    <div class="projects-wrapper">
+  <div class="projects-wrapper">
+
+    <div class="project-grid">
+      <a href="projects/project1.html" class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/1.png" alt="AWS 3-Tier Architecture" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">AWS 3-Tier Architecture Deployment</h3>
+        </div>
+      </a>
+
+      <a href="projects/project2.html" class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/2.png" alt="Project 2" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">End-to-End DevOps Pipeline for Zomato Application</h3>
+        </div>
+      </a>
+
+      <a href="projects/project3.html" class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/3.png" alt="Project 3" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Real-Time System Monitoring with Flask, Docker, and AWS EKS</h3>
+        </div>
+      </a>
+
+      <a href="projects/project4.html" class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/4.png" alt="Project 4" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Responsive Serverless Web Application Deployment Using Aws Lambda, API Gateway, DynamoDB, CloudFront, and S3</h3>
+        </div>
+      </a>
+
+      <a href="projects/project5.html" class="project-card">
+        <div class="project-image">
+          <img src="assets/projects/5.png" alt="Project 5" />
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Design and Manage infrastructure with Terraform while automating deployment workflows using GitHub Actions</h3>
+        </div>
+      </a>
+    </div>
+
+    <!-- Arrows below grid for mobile -->
+    <div class="pagination-controls">
       <button class="pagination-arrow left-arrow" aria-label="Previous project" type="button">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" />
         </svg>
       </button>
 
-      <div class="project-grid">
-        <a href="projects/project1.html" class="project-card">
-          <div class="project-image">
-            <img src="assets/projects/1.png" alt="AWS 3-Tier Architecture" />
-            <!-- <div class="date-badge">
-              <span>2024</span>
-              <small>June</small>
-            </div> -->
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">AWS 3-Tier Architecture Deployment</h3>
-            <!-- <p class="project-desc">
-              Developed a secure 3-tier architecture on AWS using VPC, EC2, RDS, and S3 with Route 53 and SSL.
-            </p> -->
-          </div>
-        </a>
-
-        <a href="projects/project2.html" class="project-card">
-          <div class="project-image">
-            <img src="assets/projects/2.png" alt="Project 2" />
-            <!-- <div class="date-badge">
-              <span>2023</span>
-              <small>Dec</small>
-            </div> -->
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">End-to-End DevOps Pipeline for Zomato Application</h3>
-            <!-- <p class="project-desc">Built a DevOps pipeline for the Zomato app to automate integration, testing,
-              deployment, and monitoring.</p> -->
-          </div>
-        </a>
-
-        <a href="projects/project3.html" class="project-card">
-          <div class="project-image">
-            <img src="assets/projects/3.png" alt="Project 3" />
-            <!-- <div class="date-badge">
-              <span>2022</span>
-              <small>Oct</small>
-            </div> -->
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Real-Time System Monitoring with Flask, Docker, and AWS EKS</h3>
-            <!-- <p class="project-desc">Developed a Flask app to monitor CPU and memory usage using psutil, containerized
-              with Docker, pushed to ECR, and deployed on EKS for scalable management.</p> -->
-          </div>
-        </a>
-
-        <a href="projects/project4.html" class="project-card">
-          <div class="project-image">
-            <img src="assets/projects/4.png" alt="Project 4" />
-            <!-- <div class="date-badge">
-              <span>2021</span>
-              <small>Aug</small>
-            </div> -->
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Responsive Serverless Web Application Deployment Using Aws Lambda, API Gateway, DynamoDB, CloudFront, and S3</h3>
-            <!-- <p class="project-desc">Description for project 4.</p> -->
-          </div>
-        </a>
-        <a href="projects/project5.html" class="project-card">
-          <div class="project-image">
-            <img src="assets/projects/5.png" alt="Project 4" />
-            <!-- <div class="date-badge">
-              <span>2021</span>
-              <small>Aug</small>
-            </div> -->
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Design and Manage infrastructure with Terraform while automating deployment workflows using GitHub Actions</h3>
-            <!-- <p class="project-desc">Description for project 4.</p> -->
-          </div>
-        </a>
-      </div>
-
       <button class="pagination-arrow right-arrow" aria-label="Next project" type="button">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round" />
         </svg>
       </button>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
 
 
