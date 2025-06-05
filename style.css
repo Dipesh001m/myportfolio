@@ -1078,4 +1078,139 @@ html {
 
 
 
+.blog-home {
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f1b;
+}
 
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.blog-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.blog-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.blog-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Optional tool-based color accents */
+.aws { border-left: 5px solid #FF9900; }
+.docker { border-left: 5px solid #0db7ed; }
+.kubernetes { border-left: 5px solid #326ce5; }
+.jenkins { border-left: 5px solid #d33833; }
+.ansible { border-left: 5px solid #0ae139; }
+.terraform { border-left: 5px solid #623ce4; }
+
+
+
+.blog-post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #e4e4e4;
+  background-color: #0f0f1b;
+  box-sizing: border-box;
+}
+
+.blog-post h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.blog-post .meta {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.blog-post h2 {
+  color: #1a8cff;
+  font-size: 1.6rem;
+  margin: 1.8rem 0 0.8rem;
+  border-bottom: 2px solid #1a8cff;
+  padding-bottom: 0.4rem;
+}
+
+.blog-post p,
+.blog-post li {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+.blog-post ul,
+.blog-post ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post li {
+  margin-bottom: 0.6rem;
+}
+
+.faq {
+  margin-top: 1rem;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background-color: #1a1a2e;
+  color: #ffdd57;
+  border: none;
+  padding: 0.8rem 1rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.faq-answer {
+  background-color: #2a2a3c;
+  color: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: none;
+  border-radius: 5px;
+  border-left: 4px solid #1a8cff;
+}
