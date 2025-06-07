@@ -37,603 +37,870 @@
       <div class="hamburger" id="hamburger">&#9776;</div>
     </div>
   </header>
-
-<main class="blog-post">
-  <article>
-    <h1>Amazon Web Services (AWS) in DevOps</h1>
-    <!-- <p class="meta">Published: June 4, 2025 • Category: DevOps & Cloud</p> -->
-
-    <section>
-      <h2>What is AWS?</h2>
-      <p>
-        Amazon Web Services (AWS) is the most comprehensive cloud platform offering over 200 services globally. It enables businesses to scale faster, reduce costs, and innovate using a suite of computing, storage, database, and Networking.
-      </p>
-    </section>
-
-    <section>
-      <h2>AWS Services Used in DevOps</h2>
-      <ul>
-        <li><strong>EC2:</strong> Virtual machines for app hosting, CI/CD runners, and test environments.</li>
-        <li><strong>S3:</strong> Storage for build artifacts, backups, and static files.</li>
-        <li><strong>CodePipeline:</strong> Orchestrates CI/CD workflows.</li>
-        <li><strong>CodeBuild:</strong> On-demand code compilation, test, and packaging service.</li>
-        <li><strong>CodeDeploy:</strong> Handles automated application deployments across environments.</li>
-        <li><strong>CloudFormation:</strong> Infrastructure as Code (IaC) for provisioning resources.</li>
-        <li><strong>CloudWatch:</strong> Monitoring and alerting service for logs, metrics, and events.</li>
-        <li><strong>IAM:</strong> Access and security control for AWS users and services.</li>
-        <li><strong>Amazon ECR:</strong> Fully managed Docker container registry.</li>
-        <li><strong>Amazon ECS:</strong> Orchestrates Docker containers with high performance.</li>
-        <li><strong>Amazon EKS:</strong> Managed Kubernetes service to run scalable, reliable applications.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Importance of AWS in DevOps</h2>
-      <p>
-        AWS plays a vital role in DevOps by enabling automation, monitoring, and scalable infrastructure. Its vast toolset supports CI/CD, container orchestration, and serverless architecture, making it a go-to platform for modern DevOps practices.
-      </p>
-    </section>
-
-    <section>
-  <h2>AWS Interview Questions</h2>
-
-  <!-- Server Category -->
-  <h3>Compute</h3>
-<div class="faq">
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">1. What is Amazon EC2?</button>
-    <div class="faq-answer">
-      <p>Amazon EC2 (Elastic Compute Cloud) provides resizable compute capacity in the cloud, allowing users to launch and manage virtual servers (instances) for running applications.</p>
-    </div>
+<section class="aws-section" id="aws-services">
+<div class="aws-container">
+  <div class="aws-topics">
+    <ul>
+      <li onclick="showContent('Compute')">Compute</li>
+      <li onclick="showContent('Storage')">Storage</li>
+      <li onclick="showContent('Networking')">Networking</li>
+      <li onclick="showContent('CI/CD')">CI/CD & IAC</li>
+      <li onclick="showContent('Monitoring')">Monitoring</li>
+      <li onclick="showContent('Security')">Security</li>
+      <li onclick="showContent('Container')">Container</li>
+    </ul>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">2. What are the types of EC2 instances?</button>
-    <div class="faq-answer">
-      <p>Types of EC2 instances include:</p>
-      <ul>
-        <li><strong>General Purpose</strong> (e.g., t2, t3)</li>
-        <li><strong>Compute Optimized</strong> (e.g., c5)</li>
-        <li><strong>Memory Optimized</strong> (e.g., r5)</li>
-        <li><strong>Storage Optimized</strong> (e.g., i3)</li>
-        <li><strong>Accelerated Computing</strong> (e.g., p3, inf1)</li>
-      </ul>
-    </div>
+  <div class="aws-content" id="aws-content">
+  <p><strong>AWS (Amazon Web Services)</strong> is a cloud platform by Amazon offering scalable, cost-effective cloud computing solutions. It’s used by Netflix, NASA, startups, and enterprises globally.</p>
+  
+  <p>With AWS, users can access on-demand computing resources without the need to invest in physical hardware. It supports a wide range of use cases such as hosting websites, running applications, storing data, and deploying machine learning models.</p>
+  
+  <p>AWS provides services across several key categories, including:</p>
+  <ul>
+    <li><strong>Compute:</strong> Services like Amazon EC2 and AWS Lambda to run applications and functions.</li>
+    <li><strong>Storage:</strong> Options like Amazon S3, EBS, and Glacier to store and archive data reliably.</li>
+    <li><strong>Database:</strong> Managed databases such as Amazon RDS, DynamoDB, and Aurora.</li>
+    <li><strong>Networking:</strong> Services like VPC, Route 53, and CloudFront for connectivity and content delivery.</li>
+    <li><strong>Security & Identity:</strong> Tools like IAM and KMS to manage access and protect data.</li>
+  </ul>
+
+  <p>One of the biggest advantages of AWS is its pay-as-you-go pricing model, allowing users to scale resources up or down based on demand. AWS also provides a global network of data centers, enabling low-latency service delivery around the world.</p>
+
+  <p>Whether you're a developer building a startup app or an enterprise modernizing its IT infrastructure, AWS offers tools and services to accelerate innovation, improve reliability, and reduce costs.</p>
+</div>
+</section>
+
+
+<script>
+  const contentMap = {
+    Compute: `
+      <p><strong>Amazon EC2 (Elastic Compute Cloud)</strong> is a core AWS compute service that allows you to launch and manage scalable virtual servers in the cloud. It is designed to make web-scale computing easier for developers by offering secure, resizable, and flexible compute capacity. EC2 eliminates the need to invest in hardware upfront, so you can develop and deploy applications faster.</p>
+
+  <p>With EC2, you can launch instances in minutes, scale them up or down automatically, and pay only for the compute time you use.</p>
+
+  <h3><strong>What Amazon EC2 Offers:</strong></h3>
+  <ul>
+    <li><strong>Broad Choice of Instance Types:</strong> EC2 offers a wide range of instance families optimized for different workloads — general purpose, compute-optimized, memory-optimized, storage-optimized, and accelerated computing (GPU/FPGA).</li>
+    <li><strong>Flexible Pricing Models:</strong> Includes On-Demand Instances, Reserved Instances (RI), Spot Instances, and Savings Plans for cost-effective usage based on your workload needs.</li>
+    <li><strong>Custom AMIs:</strong> Easily create and reuse your own Amazon Machine Images (AMIs) to replicate instances with predefined software configurations.</li>
+    <li><strong>Highly Scalable:</strong> Supports horizontal scaling via Auto Scaling and vertical scaling by resizing instances.</li>
+    <li><strong>Integrated Monitoring & Logging:</strong> Built-in integration with CloudWatch for detailed monitoring, logging, and alerting of instance metrics and health.</li>
+    <li><strong>Global Infrastructure:</strong> Launch instances in multiple regions and Availability Zones for high availability and disaster recovery.</li>
+  </ul>
+
+  <h3><strong>Key Components of EC2:</strong></h3>
+  <ul>
+    <li><strong>EC2 Instances:</strong> The virtual servers you run. They come in various types based on CPU, memory, storage, and networking capabilities (e.g., t4g, m7g, c7i, etc.).</li>
+    <li><strong>Amazon Machine Images (AMIs):</strong> Pre-configured templates that include the OS and software configuration. You can use default AMIs or create your own.</li>
+    <li><strong>Elastic Block Store (EBS):</strong> Persistent block-level storage volumes that can be attached to EC2 instances.</li>
+    <li><strong>Instance Store:</strong> Temporary storage physically attached to the host machine — suitable for transient data.</li>
+    <li><strong>Security Groups:</strong> Virtual firewalls that control inbound and outbound traffic to EC2 instances at the instance level.</li>
+    <li><strong>Key Pairs:</strong> Used for secure SSH access to Linux instances or password retrieval for Windows instances.</li>
+    <li><strong>Elastic IP Addresses:</strong> Static public IPs that can be attached to EC2 instances to ensure consistent reachability.</li>
+    <li><strong>Elastic Load Balancing (ELB):</strong> Automatically distributes incoming traffic across multiple EC2 instances for fault tolerance and scalability.</li>
+    <li><strong>Auto Scaling:</strong> Automatically adjusts the number of EC2 instances to handle the load — both scale-out and scale-in.</li>
+    <li><strong>Placement Groups:</strong> Control how your instances are placed on underlying hardware to optimize for high availability or low latency.</li>
+  </ul>
+
+  <p>Amazon EC2 gives users full control of their compute environment, including the ability to:</p>
+  <ul>
+    <li>Choose the operating system (Linux, Windows, macOS).</li>
+    <li>Configure CPU, RAM, storage, and networking.</li>
+    <li>Use cloud-init or EC2 user data to bootstrap applications.</li>
+    <li>Attach IAM roles for secure API access from the instance.</li>
+  </ul>
+
+  <h3><strong>Benefits of EC2:</strong></h3>
+  <ul>
+    <li><strong>Scalability:</strong> Quickly scale up or down based on demand with Auto Scaling and Elastic Load Balancing.</li>
+    <li><strong>Cost Efficiency:</strong> Pay-as-you-go pricing and various purchase models (On-Demand, Reserved, Spot).</li>
+    <li><strong>Control:</strong> Full root/admin access to your instances and the ability to interact with them as you would any machine.</li>
+    <li><strong>Integration:</strong> Seamlessly integrates with other AWS services like S3, RDS, Lambda, CloudWatch, and more.</li>
+    <li><strong>Security:</strong> Built-in encryption, security groups, VPC integration, and IAM roles for fine-grained access control.</li>
+  </ul>
+
+  <h3>AWS EC2 Interview Questions</h3>
+<div class="interview-qa">
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      1. What is Amazon EC2?
+    </h4>
+    <p class="qa-answer">Amazon EC2 (Elastic Compute Cloud) provides resizable compute capacity in the cloud, allowing users to launch and manage virtual servers (instances) for running applications.</p>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">3. What is an AMI?</button>
-    <div class="faq-answer">
-      <p>An AMI (Amazon Machine Image) is a pre-configured template containing an OS, application server, and applications used to launch EC2 instances.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">4. What is the difference between Stop and Terminate in EC2?</button>
-    <div class="faq-answer">
-      <p><strong>Stop:</strong> Shuts down the instance, preserving EBS volume data. Can be restarted.<br>
-         <strong>Terminate:</strong> Deletes the instance permanently. Attached EBS volumes are deleted unless set to persist.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">5. What is EBS?</button>
-    <div class="faq-answer">
-      <p>Amazon EBS (Elastic Block Store) provides persistent block storage for EC2 instances. Volumes are independent and retain data even after instance shutdown.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">6. What are the types of EBS volumes?</button>
-    <div class="faq-answer">
-      <ul>
-        <li><strong>gp2/gp3:</strong> General Purpose SSD</li>
-        <li><strong>io1/io2:</strong> Provisioned IOPS SSD</li>
-        <li><strong>st1:</strong> Throughput Optimized HDD</li>
-        <li><strong>sc1:</strong> Cold HDD</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">7. What is an EBS Snapshot?</button>
-    <div class="faq-answer">
-      <p>An EBS snapshot is a backup of your EBS volume at a specific point in time. Snapshots are stored in Amazon S3 and are incremental.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">8. Can you use S3 instead of EBS with EC2?</button>
-    <div class="faq-answer">
-      <p>No. S3 is object storage and cannot be mounted as a block device. EBS is required for operating systems and applications needing disk-like storage.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">9. What is EFS?</button>
-    <div class="faq-answer">
-      <p>Amazon EFS (Elastic File System) is a scalable file storage service that supports multiple EC2 instances accessing the file system concurrently across Availability Zones.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">10. What is the difference between EBS and EFS?</button>
-    <div class="faq-answer">
-      <p><strong>EBS:</strong> Block storage, attached to one EC2 instance at a time.<br>
-         <strong>EFS:</strong> Shared file storage, can be mounted to multiple EC2 instances simultaneously.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">11. What is EC2 Auto Scaling?</button>
-    <div class="faq-answer">
-      <p>EC2 Auto Scaling automatically adjusts the number of EC2 instances based on demand to maintain performance and reduce cost.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">12. What is EC2 Placement Group?</button>
-    <div class="faq-answer">
-      <p>An EC2 Placement Group is a logical grouping of instances within a single Availability Zone for low latency and high throughput between them.</p>
-    </div>
+  <div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">
+    2. What are the types of EC2 instances?
+  </h4>
+  <div class="qa-answer">
+    <p>Types of EC2 instances include:</p>
+    <ul>
+      <li><strong>General Purpose</strong> (e.g., t2, t3)</li>
+      <li><strong>Compute Optimized</strong> (e.g., c5)</li>
+      <li><strong>Memory Optimized</strong> (e.g., r5)</li>
+      <li><strong>Storage Optimized</strong> (e.g., i3)</li>
+      <li><strong>Accelerated Computing</strong> (e.g., p3, inf1)</li>
+    </ul>
   </div>
 </div>
 
 
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">13. What are Security Groups in EC2?</button>
-      <div class="faq-answer">
-        <p>Security Groups act as virtual firewalls for your EC2 instances, controlling inbound and outbound traffic based on rules. Each instance can be associated with one or more Security Groups.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" aria-expanded="false">14. How does auto-scaling work with EC2?</button>
-      <div class="faq-answer">
-        <p>	• Auto-scaling allows EC2 instances to scale up (add more instances) or down (remove instances) automatically based on demand, metrics (e.g., CPU utilization), or schedules.</p>
-      </div>
-    </div>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      3. What is an AMI?
+    </h4>
+    <p class="qa-answer">An AMI (Amazon Machine Image) is a pre-configured template containing an OS, application server, and applications used to launch EC2 instances.</p>
   </div>
 
- <!-- Storage Category -->
-<h3>Storage</h3>
-<div class="faq">
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">1. How is Docker used in AWS?</button>
-    <div class="faq-answer">
-      <p>Docker containers can be stored in Amazon ECR and run using ECS or EKS. ECS allows you to manage containers without managing infrastructure, and EKS integrates Kubernetes for orchestration.</p>
-    </div>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      4. What is the difference between Stop and Terminate in EC2?
+    </h4>
+    <p class="qa-answer"><strong>Stop:</strong> Shuts down the instance, preserving EBS volume data. Can be restarted.<br>
+      <strong>Terminate:</strong> Deletes the instance permanently. Attached EBS volumes are deleted unless set to persist.</p>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">2. What is S3?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      5. What is EBS?
+    </h4>
+    <p class="qa-answer">Amazon EBS (Elastic Block Store) provides persistent block storage for EC2 instances. Volumes are independent and retain data even after instance shutdown.</p>
+  </div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">
+    6. What are the types of EBS volumes?
+  </h4>
+  <div class="qa-answer">
+    <ul>
+      <li><strong>gp2/gp3:</strong> General Purpose SSD</li>
+      <li><strong>io1/io2:</strong> Provisioned IOPS SSD</li>
+      <li><strong>st1:</strong> Throughput Optimized HDD</li>
+      <li><strong>sc1:</strong> Cold HDD</li>
+    </ul>
+  </div>
+</div>
+
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      7. What is an EBS Snapshot?
+    </h4>
+    <p class="qa-answer">An EBS snapshot is a backup of your EBS volume at a specific point in time. Snapshots are stored in Amazon S3 and are incremental.</p>
+  </div>
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      8. Can you use S3 instead of EBS with EC2?
+    </h4>
+    <p class="qa-answer">No. S3 is object storage and cannot be mounted as a block device. EBS is required for operating systems and applications needing disk-like storage.</p>
+  </div>
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      9. What is EFS?
+    </h4>
+    <p class="qa-answer">Amazon EFS (Elastic File System) is a scalable file storage service that supports multiple EC2 instances accessing the file system concurrently across Availability Zones.</p>
+  </div>
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      10. What is the difference between EBS and EFS?
+    </h4>
+    <p class="qa-answer"><strong>EBS:</strong> Block storage, attached to one EC2 instance at a time.<br>
+      <strong>EFS:</strong> Shared file storage, can be mounted to multiple EC2 instances simultaneously.</p>
+  </div>
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      11. What is EC2 Auto Scaling?
+    </h4>
+    <p class="qa-answer">EC2 Auto Scaling automatically adjusts the number of EC2 instances based on demand to maintain performance and reduce cost.</p>
+  </div>
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      12. What is EC2 Placement Group?
+    </h4>
+    <p class="qa-answer">An EC2 Placement Group is a logical grouping of instances within a single Availability Zone for low latency and high throughput between them.</p>
+  </div>
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      13. What are Security Groups in EC2?
+    </h4>
+    <p class="qa-answer">Security Groups act as virtual firewalls for your EC2 instances, controlling inbound and outbound traffic based on rules. Each instance can be associated with one or more Security Groups.</p>
+  </div>
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">
+      14. How does auto-scaling work with EC2?
+    </h4>
+    <p class="qa-answer">Auto-scaling allows EC2 instances to scale up (add more instances) or down (remove instances) automatically based on demand, metrics (e.g., CPU utilization), or schedules.</p>
+  </div>
+
+</div>
+    `,
+
+Storage: `
+<p><strong>Amazon S3 (Simple Storage Service)</strong> is a highly scalable, durable, and secure object storage service offered by AWS. It enables you to store and retrieve any amount of data, at any time, from anywhere on the web. S3 is ideal for a wide range of use cases including backup and restore, data archiving, big data analytics, website hosting, and cloud-native application data storage.</p>
+
+<p><strong>Core Components & Features of Amazon S3:</strong></p>
+
+<ul>
+    <li><strong>Buckets:</strong> Top-level containers that hold your data (objects). Each bucket name must be globally unique. Buckets also define region placement and access controls.</li>
+
+    <li><strong>Objects:</strong> Fundamental units stored in S3, consisting of the actual data, metadata, and a unique key within a bucket. Each object can be up to 5 TB in size.</li>
+
+    <li><strong>Storage Classes:</strong> S3 provides multiple storage classes to optimize cost and performance:
+        <ul>
+            <li><strong>S3 Standard:</strong> For frequently accessed data.</li>
+            <li><strong>S3 Intelligent-Tiering:</strong> Automatically moves data between access tiers based on usage.</li>
+            <li><strong>S3 Standard-IA (Infrequent Access):</strong> Lower cost for data accessed less frequently.</li>
+            <li><strong>S3 One Zone-IA:</strong> Cost-effective for infrequently accessed data stored in a single Availability Zone.</li>
+            <li><strong>S3 Glacier:</strong> Low-cost archival storage with retrieval options from minutes to hours.</li>
+            <li><strong>S3 Glacier Deep Archive:</strong> Lowest-cost storage for data that is rarely accessed and retained for long periods.</li>
+        </ul>
+    </li>
+
+    <li><strong>Versioning:</strong> Enables you to preserve, retrieve, and restore every version of every object stored in a bucket, protecting against accidental overwrites and deletions.</li>
+
+    <li><strong>Lifecycle Management:</strong> Define rules to transition objects between storage classes or expire/delete them automatically based on time or conditions.</li>
+
+    <li><strong>Access Management:</strong> Use multiple tools to control access:
+        <ul>
+            <li><strong>IAM Policies:</strong> Assign user-level permissions.</li>
+            <li><strong>Bucket Policies:</strong> Control access at the bucket level.</li>
+            <li><strong>ACLs (Access Control Lists):</strong> Legacy method for finer-grained access.</li>
+            <li><strong>Block Public Access:</strong> Prevent unintended public exposure of data.</li>
+        </ul>
+    </li>
+
+    <li><strong>Event Notifications:</strong> Automatically trigger workflows using AWS Lambda, SNS (Simple Notification Service), or SQS (Simple Queue Service) on object-level events (like upload, delete).</li>
+
+    <li><strong>Data Protection & Encryption:</strong> S3 supports:
+        <ul>
+            <li><strong>Server-Side Encryption (SSE):</strong> Encrypts data at rest with keys managed by AWS (SSE-S3), KMS (SSE-KMS), or customer-provided keys (SSE-C).</li>
+            <li><strong>Client-Side Encryption:</strong> You encrypt data before uploading it to S3.</li>
+        </ul>
+    </li>
+
+    <li><strong>Replication:</strong> Use Cross-Region Replication (CRR) or Same-Region Replication (SRR) to automatically copy objects to another bucket for compliance, backup, or latency reasons.</li>
+
+    <li><strong>Transfer Acceleration:</strong> Speeds up uploads and downloads using Amazon CloudFront’s globally distributed edge locations.</li>
+
+    <li><strong>Object Lock:</strong> Enforces write-once-read-many (WORM) policies for regulatory compliance.</li>
+
+    <li><strong>Requester Pays:</strong> Option to let data download costs be paid by the data requester instead of the bucket owner.</li>
+</ul>
+
+<p><strong>Service Integrations:</strong> S3 integrates deeply with other AWS services to build powerful solutions:
+    <ul>
+        <li><strong>AWS Lambda:</strong> Run code automatically in response to S3 events.</li>
+        <li><strong>Athena:</strong> Run SQL queries directly on S3 data.</li>
+        <li><strong>Amazon Redshift Spectrum:</strong> Extend analytics from Redshift to data in S3.</li>
+        <li><strong>Amazon CloudFront:</strong> Deliver content stored in S3 with low latency via CDN.</li>
+        <li><strong>AWS Backup:</strong> Centrally manage backup for S3 along with other AWS services.</li>
+    </ul>
+</p>
+
+<p>Amazon S3 offers <strong>99.999999999% (11 9s) durability</strong>, virtually unlimited scalability, global availability, and enterprise-grade security, making it the backbone of storage infrastructure for many cloud-native applications and data-driven workloads.</p>
+
+<!-- Storage Category -->
+<h3>S3 Interview Questions</h3>
+<div class="interview-qa">
+
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">1. What is S3?</h4>
+    <div class="qa-answer">
       <p>S3 (Simple Storage Service) is a scalable object storage service used to store and retrieve any amount of data from anywhere on the web. It follows a pay-as-you-go pricing model.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">3. What are the different storage classes in S3?</button>
-    <div class="faq-answer">
-      <p>
-        • Standard (frequently accessed)<br>
-        • Standard-IA (infrequently accessed)<br>
-        • One Zone-IA<br>
-        • Glacier<br>
-        • Glacier Deep Archive<br>
-        • Reduced Redundancy Storage (RRS)
-      </p>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">2. What are the different storage classes in S3?</h4>
+    <div class="qa-answer">
+      <ul>
+        <li>Standard (frequently accessed)</li>
+        <li>Standard-IA (infrequently accessed)</li>
+        <li>One Zone-IA</li>
+        <li>Glacier</li>
+        <li>Glacier Deep Archive</li>
+        <li>Reduced Redundancy Storage (RRS)</li>
+      </ul>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">4. What is the default storage class in S3?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">3. What is the default storage class in S3?</h4>
+    <div class="qa-answer">
       <p>The default storage class is Standard (frequently accessed).</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">5. Explain Amazon S3 lifecycle rules.</button>
-    <div class="faq-answer">
-      <p>Lifecycle rules help reduce cost by transitioning or deleting data:<br>
-        • Store in S3 Standard → after 30 days to Standard-IA → after 90 days to Glacier → after 3 years delete.
-      </p>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">4. Explain Amazon S3 lifecycle rules.</h4>
+    <div class="qa-answer">
+      <p>Lifecycle rules help reduce cost by transitioning or deleting data:</p>
+      <p>• Store in S3 Standard → after 30 days to Standard-IA → after 90 days to Glacier → after 3 years delete.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">6. What is Glacier?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">5. What is Glacier?</h4>
+    <div class="qa-answer">
       <p>Amazon Glacier is used for long-term data backup and archival. It’s a low-cost storage service optimized for infrequently accessed data.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">7. What is the maximum size of an S3 bucket and object?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">6. What is the maximum size of an S3 bucket and object?</h4>
+    <div class="qa-answer">
       <p>S3 bucket can store objects up to 5 TB each. UTF-8 encoded key names (object names) can be up to 1024 bytes long.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">8. Explain the concept of Multipart Upload in S3.</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">7. Explain the concept of Multipart Upload in S3.</h4>
+    <div class="qa-answer">
       <p>S3 allows large file uploads by breaking them into smaller parts. These parts are uploaded independently and then combined. AWS CLI uses this automatically for large files.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">9. What is S3 Object Lock?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">8. What is S3 Object Lock?</h4>
+    <div class="qa-answer">
       <p>Object Lock prevents deletion or overwriting of objects for a defined time. It supports compliance by enabling Write Once Read Many (WORM) protection.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">10. How can you encrypt data in S3?</button>
-    <div class="faq-answer">
-      <p>
-        • SSE-S3 (AES-256)<br>
-        • SSE-KMS (AWS KMS)<br>
-        • SSE-C (Client-side encryption)
-      </p>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">9. How can you encrypt data in S3?</h4>
+    <div class="qa-answer">
+      <ul>
+        <li>SSE-S3 (AES-256)</li>
+        <li>SSE-KMS (AWS KMS)</li>
+        <li>SSE-C (Client-side encryption)</li>
+      </ul>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">11. What are the parameters for S3 pricing?</button>
-    <div class="faq-answer">
-      <p>
-        • Storage used<br>
-        • Number of requests<br>
-        • Data transfer<br>
-        • Storage management<br>
-        • Transfer acceleration
-      </p>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">10. What are the parameters for S3 pricing?</h4>
+    <div class="qa-answer">
+      <ul>
+        <li>Storage used</li>
+        <li>Number of requests</li>
+        <li>Data transfer</li>
+        <li>Storage management</li>
+        <li>Transfer acceleration</li>
+      </ul>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">12. What is required for Cross-Region Replication (CRR) in S3?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">11. What is required for Cross-Region Replication (CRR) in S3?</h4>
+    <div class="qa-answer">
       <p>You must enable versioning on both the source and destination buckets. They must also be in different regions.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">13. What are the types of AWS Storage Gateway?</button>
-    <div class="faq-answer">
-      <p>
-        • File Gateway<br>
-        • Volume Gateway<br>
-        • Tape Gateway
-      </p>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">12. What are the types of AWS Storage Gateway?</h4>
+    <div class="qa-answer">
+      <ul>
+        <li>File Gateway</li>
+        <li>Volume Gateway</li>
+        <li>Tape Gateway</li>
+      </ul>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">14. Can deleted S3 buckets be recovered?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">13. Can deleted S3 buckets be recovered?</h4>
+    <div class="qa-answer">
       <p>If versioning was enabled before deletion, objects can be restored using previous versions.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">15. What to remember while creating an S3 bucket?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">14. What to remember while creating an S3 bucket?</h4>
+    <div class="qa-answer">
       <p>Bucket names must be globally unique, lowercase, and can contain numbers and hyphens. You can create up to 100 buckets per account (more upon request).</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">16. What is the relation between S3 and AWS KMS?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">15. What is the relation between S3 and AWS KMS?</h4>
+    <div class="qa-answer">
       <p>S3 integrates with AWS KMS to encrypt data using 256-bit AES encryption. You can manage keys through KMS for added security and audit control.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">17. What is Cross-Region Replication in Amazon S3?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">16. What is Cross-Region Replication in Amazon S3?</h4>
+    <div class="qa-answer">
       <p>It replicates newly uploaded objects from one region to another to reduce latency and improve disaster recovery. Requires versioning enabled on both buckets.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">18. Can S3 objects be delivered using CloudFront?</button>
-    <div class="faq-answer">
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">17. Can S3 objects be delivered using CloudFront?</h4>
+    <div class="qa-answer">
       <p>Yes, Amazon CloudFront can be used as a CDN to deliver S3 content globally with low latency.</p>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">19. What is the difference between EBS, EFS, and S3?</button>
-    <div class="faq-answer">
-      <p>
-        • EBS: Block storage attached to one EC2 instance.<br>
-        • EFS: Shared file storage accessible by multiple EC2 instances.<br>
-        • S3: Object storage accessed via APIs or browser.
-      </p>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">18. What is the difference between EBS, EFS, and S3?</h4>
+    <div class="qa-answer">
+      <ul>
+        <li><strong>EBS:</strong> Block storage attached to one EC2 instance.</li>
+        <li><strong>EFS:</strong> Shared file storage accessible by multiple EC2 instances.</li>
+        <li><strong>S3:</strong> Object storage accessed via APIs or browser.</li>
+      </ul>
     </div>
   </div>
 
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">20. What is the difference between Block and File Storage?</button>
-    <div class="faq-answer">
-      <p>
-        • Block Storage: Stores data in blocks (e.g., EBS), used by OS.<br>
-        • File Storage: Stores data as files in directories (e.g., EFS).
-      </p>
+  <div class="qa-item">
+    <h4 class="qa-question" onclick="toggleAnswer(this)">19. What is the difference between Block and File Storage?</h4>
+    <div class="qa-answer">
+      <ul>
+        <li><strong>Block Storage:</strong> Stores data in blocks (e.g., EBS), used by OS.</li>
+        <li><strong>File Storage:</strong> Stores data as files in directories (e.g., EFS).</li>
+      </ul>
     </div>
+  </div>
+
+</div>
+
+`,
+
+
+Networking: `
+<p><strong>Amazon VPC (Virtual Private Cloud)</strong> allows you to provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a secure, virtual network that you define. It mimics a traditional network setup in a data center but with the benefits of AWS's scalability and availability.</p>
+
+    <p><strong>Key Services & Features under VPC:</strong></p>
+
+    <ul>
+        <li><strong>Subnets:</strong> Logical subdivisions of a VPC, allowing you to group resources based on accessibility (public/private).</li>
+        <li><strong>Route Tables:</strong> Control the traffic routing between subnets and internet gateways.</li>
+        <li><strong>Internet Gateway (IGW):</strong> Allows communication between instances in your VPC and the internet.</li>
+        <li><strong>NAT Gateway:</strong> Allows private subnet instances to access the internet while keeping them secure from inbound traffic.</li>
+        <li><strong>Security Groups:</strong> Stateful firewalls that control inbound and outbound traffic at the instance level.</li>
+        <li><strong>Network ACLs:</strong> Stateless firewalls for controlling traffic at the subnet level.</li>
+        <li><strong>VPC Peering:</strong> Enables direct connectivity between two VPCs for secure communication.</li>
+        <li><strong>VPC Endpoints:</strong> Privately connect your VPC to supported AWS services without using an internet gateway.</li>
+        <li><strong>VPN Connection:</strong> Securely connect your on-premises network to AWS via VPN.</li>
+    </ul>
+
+    <p>Amazon VPC gives you fine-grained control over your cloud network architecture, making it an essential service for securely managing AWS infrastructure.</p> 
+
+    <h3>Networking Interview Questions</h3>
+<div class="interview-qa">
+  <div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">6. What is a VPC in AWS?</h4>
+  <div class="qa-answer">
+    <p>A Virtual Private Cloud (VPC) is a logically isolated network in the AWS Cloud where you can launch AWS resources.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">7. What are the key components of a VPC?</h4>
+  <div class="qa-answer">
+    <p>Subnets, Route Tables, Internet Gateway, NAT Gateway, Security Groups, Network ACLs, and VPC Peering.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">8. How is a VPC different from a traditional network?</h4>
+  <div class="qa-answer">
+    <p>A VPC is software-defined, scalable, and hosted in AWS, unlike physical on-premises networks.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">9. What is CIDR notation in VPC, and why is it used?</h4>
+  <div class="qa-answer">
+    <p>CIDR specifies the IP address range for a VPC, allowing efficient allocation of IPs. For example, 192.168.1.0/24 means 24 bits are for the network and 8 bits for hosts.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">10. Can a VPC span multiple AWS Regions?</h4>
+  <div class="qa-answer">
+    <p>No, a VPC is limited to a single Region but can span multiple Availability Zones.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">11. What is the difference between a public and private subnet?</h4>
+  <div class="qa-answer">
+    <p>Public subnets have internet access via an Internet Gateway; private subnets do not.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">12. Can you have multiple subnets in one Availability Zone?</h4>
+  <div class="qa-answer">
+    <p>Yes, a single Availability Zone can contain multiple subnets.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">13. What happens if you associate a public IP with an instance in a private subnet?</h4>
+  <div class="qa-answer">
+    <p>The instance becomes accessible over the internet if proper routes and security rules are configured.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">14. How do you make a subnet private?</h4>
+  <div class="qa-answer">
+    <p>By not associating it with an Internet Gateway and using a NAT Gateway for outbound traffic.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">15. What is a route table in a VPC?</h4>
+  <div class="qa-answer">
+    <p>It defines the rules for routing traffic within the VPC and outside of it.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">16. How do you enable communication between subnets in a VPC?</h4>
+  <div class="qa-answer">
+    <p>Communication happens by default unless restricted by Security Groups or NACLs.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">17. What is a NAT Gateway, and when do you use it?</h4>
+  <div class="qa-answer">
+    <p>A NAT Gateway allows private subnet instances to access the internet without being exposed directly.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">18. Explain the difference between an Internet Gateway and a NAT Gateway.</h4>
+  <div class="qa-answer">
+    <p>An Internet Gateway allows public internet access; a NAT Gateway enables private subnet instances to access the internet without public exposure.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">19. What is a Virtual Private Gateway?</h4>
+  <div class="qa-answer">
+    <p>It is used to establish a VPN connection between your VPC and on-premises network.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">20. How does AWS Transit Gateway simplify network management?</h4>
+  <div class="qa-answer">
+    <p>It connects multiple VPCs and on-premises networks through a central hub.</p>
+  </div>
+</div>
+
+<!-- Security -->
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">21. What is a Security Group, and how is it different from a Network ACL?</h4>
+  <div class="qa-answer">
+    <p>A Security Group acts at the instance level, while Network ACLs operate at the subnet level.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">22. Can you associate multiple Security Groups with an EC2 instance?</h4>
+  <div class="qa-answer">
+    <p>Yes, multiple Security Groups can be associated with a single instance.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">23. How do you secure a VPC from external attacks?</h4>
+  <div class="qa-answer">
+    <p>Use Security Groups, NACLs, VPC Flow Logs, and AWS Network Firewall.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">24. What is AWS Network Firewall?</h4>
+  <div class="qa-answer">
+    <p>A managed firewall service for controlling and monitoring network traffic within VPCs.</p>
+  </div>
+</div>
+
+<!-- Peering and Inter-Region -->
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">25. What is VPC Peering, and how is it used?</h4>
+  <div class="qa-answer">
+    <p>VPC Peering connects two VPCs to enable direct communication.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">26. Can you establish peering between VPCs in different AWS Regions?</h4>
+  <div class="qa-answer">
+    <p>Yes, this is called inter-region VPC Peering.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">27. What are the limitations of VPC Peering?</h4>
+  <div class="qa-answer">
+    <p>No transitive routing and scaling challenges in complex architectures.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">28. How does AWS Transit Gateway improve upon VPC Peering?</h4>
+  <div class="qa-answer">
+    <p>It allows transitive routing and centralizes connectivity for multiple VPCs.</p>
+  </div>
+</div>
+
+<!-- Load Balancer -->
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">29. How does an Elastic Load Balancer work in a VPC?</h4>
+  <div class="qa-answer">
+    <p>It distributes incoming traffic across instances in multiple Availability Zones within a VPC.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">30. Can an Application Load Balancer route traffic between public and private subnets?</h4>
+  <div class="qa-answer">
+    <p>Yes, it can direct traffic between subnets as configured.</p>
+  </div>
+</div>
+
+<!-- DNS -->
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">31. What is an Amazon VPC DNS server?</h4>
+  <div class="qa-answer">
+    <p>A built-in DNS server provided by AWS for name resolution within a VPC.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">32. How do you enable DNS resolution in a VPC?</h4>
+  <div class="qa-answer">
+    <p>Enable the <code>enableDnsSupport</code> and <code>enableDnsHostnames</code> VPC attributes.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">33. What is an Amazon Route 53 Resolver?</h4>
+  <div class="qa-answer">
+    <p>A DNS service that forwards queries between on-premises and AWS VPCs.</p>
+  </div>
+</div>
+
+<!-- Advanced -->
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">34. How does AWS PrivateLink secure traffic between VPCs and AWS services?</h4>
+  <div class="qa-answer">
+    <p>It provides private connectivity without exposing traffic to the public internet.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">35. What is a VPC Endpoint?</h4>
+  <div class="qa-answer">
+    <p>A way to privately connect VPCs to AWS services without using the internet.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">36. Explain the difference between Interface Endpoint and Gateway Endpoint.</h4>
+  <div class="qa-answer">
+    <p><strong>Interface Endpoint:</strong> Uses Elastic Network Interfaces for services like S3 and DynamoDB.<br>
+    <strong>Gateway Endpoint:</strong> A route table entry for services like S3 and DynamoDB.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">37. How do you implement multi-region failover in a VPC architecture?</h4>
+  <div class="qa-answer">
+    <p>Use Route 53, Transit Gateway, and redundant infrastructure across Regions.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">38. What is the purpose of VPC Flow Logs?</h4>
+  <div class="qa-answer">
+    <p>To capture information about IP traffic going to and from a VPC.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">39. How can you use VPC Flow Logs to troubleshoot connectivity issues?</h4>
+  <div class="qa-answer">
+    <p>Analyze logs for blocked traffic, IP mismatches, or routing problems.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">40. What are the best practices for designing a VPC?</h4>
+  <div class="qa-answer">
+    <p>Use multiple subnets, secure private subnets, minimize public exposure, and enable logging.</p>
+  </div>
+</div>
+
+</div>
+    `,
+
+    "CI/CD": `
+      <h3>CI/CD</h3>
+      <p>AWS provides a suite of developer tools to automate code building, testing, and deployment.</p>
+      <ul>
+        <li><strong>CodeCommit:</strong> Managed Git-based source control</li>
+        <li><strong>CodeBuild:</strong> Automated build and test service</li>
+        <li><strong>CodeDeploy:</strong> Automates application deployment</li>
+        <li><strong>CodePipeline:</strong> Manages the full CI/CD workflow</li>
+      </ul>
+      <h3>Infrastructure as Code (IaC)</h3>
+      <p>IAC tools let you define and provision AWS infrastructure through code, enabling version control and automation.</p>
+      <ul>
+        <li><strong>CloudFormation:</strong> Use JSON/YAML templates to define resources</li>
+        <li><strong>AWS CDK:</strong> Define cloud infrastructure using TypeScript, Python, etc.</li>
+        <li><strong>Terraform (3rd-party):</strong> Popular open-source tool for multi-cloud IaC</li>
+      </ul>
+    <h3>CI/CD & IAC Interview Questions</h3>
+<div class="interview-qa">
+  <div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">1. What is Infrastructure as Code and how does it benefit cloud deployments?</h4>
+  <div class="qa-answer">
+    <p>IaC is the practice of managing and provisioning infrastructure through code instead of manual processes. It enables consistency, automation, version control, and faster deployments in cloud environments.</p>
   </div>
 </div>
 
 
-  <!-- Networking Category -->
-<h3>Networking</h3>
-<div class="faq">
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">5. What monitoring tools does AWS offer for DevOps?</button>
-    <div class="faq-answer">
-      <p>AWS offers CloudWatch for monitoring metrics, logs, and events, and X-Ray for distributed tracing of microservices applications.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">6. What is a VPC in AWS?</button>
-    <div class="faq-answer">
-      <p>A Virtual Private Cloud (VPC) is a logically isolated network in the AWS Cloud where you can launch AWS resources.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">7. What are the key components of a VPC?</button>
-    <div class="faq-answer">
-      <p>Subnets, Route Tables, Internet Gateway, NAT Gateway, Security Groups, Network ACLs, and VPC Peering.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">8. How is a VPC different from a traditional network?</button>
-    <div class="faq-answer">
-      <p>A VPC is software-defined, scalable, and hosted in AWS, unlike physical on-premises networks.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">9. What is CIDR notation in VPC, and why is it used?</button>
-    <div class="faq-answer">
-      <p>CIDR specifies the IP address range for a VPC, allowing efficient allocation of IPs. For example, 192.168.1.0/24 means 24 bits are for the network and 8 bits for hosts.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">10. Can a VPC span multiple AWS Regions?</button>
-    <div class="faq-answer">
-      <p>No, a VPC is limited to a single Region but can span multiple Availability Zones.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">11. What is the difference between a public and private subnet?</button>
-    <div class="faq-answer">
-      <p>Public subnets have internet access via an Internet Gateway; private subnets do not.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">12. Can you have multiple subnets in one Availability Zone?</button>
-    <div class="faq-answer">
-      <p>Yes, a single Availability Zone can contain multiple subnets.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">13. What happens if you associate a public IP with an instance in a private subnet?</button>
-    <div class="faq-answer">
-      <p>The instance becomes accessible over the internet if proper routes and security rules are configured.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">14. How do you make a subnet private?</button>
-    <div class="faq-answer">
-      <p>By not associating it with an Internet Gateway and using a NAT Gateway for outbound traffic.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">15. What is a route table in a VPC?</button>
-    <div class="faq-answer">
-      <p>It defines the rules for routing traffic within the VPC and outside of it.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">16. How do you enable communication between subnets in a VPC?</button>
-    <div class="faq-answer">
-      <p>Communication happens by default unless restricted by Security Groups or NACLs.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">17. What is a NAT Gateway, and when do you use it?</button>
-    <div class="faq-answer">
-      <p>A NAT Gateway allows private subnet instances to access the internet without being exposed directly.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">18. Explain the difference between an Internet Gateway and a NAT Gateway.</button>
-    <div class="faq-answer">
-      <p>An Internet Gateway allows public internet access; a NAT Gateway enables private subnet instances to access the internet without public exposure.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">19. What is a Virtual Private Gateway?</button>
-    <div class="faq-answer">
-      <p>It is used to establish a VPN connection between your VPC and on-premises network.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">20. How does AWS Transit Gateway simplify network management?</button>
-    <div class="faq-answer">
-      <p>It connects multiple VPCs and on-premises networks through a central hub.</p>
-    </div>
-  </div>
-
-  <!-- Security -->
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">21. What is a Security Group, and how is it different from a Network ACL?</button>
-    <div class="faq-answer">
-      <p>A Security Group acts at the instance level, while Network ACLs operate at the subnet level.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">22. Can you associate multiple Security Groups with an EC2 instance?</button>
-    <div class="faq-answer">
-      <p>Yes, multiple Security Groups can be associated with a single instance.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">23. How do you secure a VPC from external attacks?</button>
-    <div class="faq-answer">
-      <p>Use Security Groups, NACLs, VPC Flow Logs, and AWS Network Firewall.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">24. What is AWS Network Firewall?</button>
-    <div class="faq-answer">
-      <p>A managed firewall service for controlling and monitoring network traffic within VPCs.</p>
-    </div>
-  </div>
-
-  <!-- Peering and Inter-Region -->
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">25. What is VPC Peering, and how is it used?</button>
-    <div class="faq-answer">
-      <p>VPC Peering connects two VPCs to enable direct communication.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">26. Can you establish peering between VPCs in different AWS Regions?</button>
-    <div class="faq-answer">
-      <p>Yes, this is called inter-region VPC Peering.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">27. What are the limitations of VPC Peering?</button>
-    <div class="faq-answer">
-      <p>No transitive routing and scaling challenges in complex architectures.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">28. How does AWS Transit Gateway improve upon VPC Peering?</button>
-    <div class="faq-answer">
-      <p>It allows transitive routing and centralizes connectivity for multiple VPCs.</p>
-    </div>
-  </div>
-
-  <!-- Load Balancer -->
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">29. How does an Elastic Load Balancer work in a VPC?</button>
-    <div class="faq-answer">
-      <p>It distributes incoming traffic across instances in multiple Availability Zones within a VPC.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">30. Can an Application Load Balancer route traffic between public and private subnets?</button>
-    <div class="faq-answer">
-      <p>Yes, it can direct traffic between subnets as configured.</p>
-    </div>
-  </div>
-
-  <!-- DNS -->
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">31. What is an Amazon VPC DNS server?</button>
-    <div class="faq-answer">
-      <p>A built-in DNS server provided by AWS for name resolution within a VPC.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">32. How do you enable DNS resolution in a VPC?</button>
-    <div class="faq-answer">
-      <p>Enable the <code>enableDnsSupport</code> and <code>enableDnsHostnames</code> VPC attributes.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">33. What is an Amazon Route 53 Resolver?</button>
-    <div class="faq-answer">
-      <p>A DNS service that forwards queries between on-premises and AWS VPCs.</p>
-    </div>
-  </div>
-
-  <!-- Advanced -->
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">34. How does AWS PrivateLink secure traffic between VPCs and AWS services?</button>
-    <div class="faq-answer">
-      <p>It provides private connectivity without exposing traffic to the public internet.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">35. What is a VPC Endpoint?</button>
-    <div class="faq-answer">
-      <p>A way to privately connect VPCs to AWS services without using the internet.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">36. Explain the difference between Interface Endpoint and Gateway Endpoint.</button>
-    <div class="faq-answer">
-      <p><strong>Interface Endpoint:</strong> Uses Elastic Network Interfaces for services like S3 and DynamoDB.<br>
-      <strong>Gateway Endpoint:</strong> A route table entry for services like S3 and DynamoDB.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">37. How do you implement multi-region failover in a VPC architecture?</button>
-    <div class="faq-answer">
-      <p>Use Route 53, Transit Gateway, and redundant infrastructure across Regions.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">38. What is the purpose of VPC Flow Logs?</button>
-    <div class="faq-answer">
-      <p>To capture information about IP traffic going to and from a VPC.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">39. How can you use VPC Flow Logs to troubleshoot connectivity issues?</button>
-    <div class="faq-answer">
-      <p>Analyze logs for blocked traffic, IP mismatches, or routing problems.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">40. What are the best practices for designing a VPC?</button>
-    <div class="faq-answer">
-      <p>Use multiple subnets, secure private subnets, minimize public exposure, and enable logging.</p>
-    </div>
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">2. Compare AWS CloudFormation with Terraform. When would you use one over the other?</h4>
+  <div class="qa-answer">
+    <p>CloudFormation is AWS-native and integrates tightly with AWS services using YAML/JSON. Terraform is multi-cloud, uses HCL, and is better for modular and reusable code. Use CloudFormation for AWS-only projects and Terraform for multi-cloud setups.</p>
   </div>
 </div>
-</section>
-  </article>
-</main>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">3. What are the benefits of using AWS CDK over CloudFormation templates?</h4>
+  <div class="qa-answer">
+    <p>AWS CDK lets you write infrastructure using familiar programming languages like Python and TypeScript. It offers abstraction, reusability, and simplifies complex CloudFormation configurations.</p>
+  </div>
+</div>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">4. How do you manage IaC across multiple environments and regions?</h4>
+  <div class="qa-answer">
+    <p>By using variables, environment-specific configs, Terraform workspaces, or CloudFormation stack sets. CI/CD pipelines also help deploy and manage infrastructure per environment and region.</p>
+  </div>
+</div>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">5. Can you explain how Terraform state management works?</h4>
+  <div class="qa-answer">
+    <p>Terraform keeps a state file to track infrastructure. It compares the current state with the desired configuration to decide what to create, update, or delete. Remote backends like S3 with locking via DynamoDB are recommended for team use.</p>
+  </div>
+</div>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">6. Have you used nested stacks or modules in CloudFormation or Terraform? Why?</h4>
+  <div class="qa-answer">
+    <p>Yes, they help organize infrastructure into reusable, manageable pieces. Modules in Terraform and nested stacks in CloudFormation reduce duplication and simplify complex setups.</p>
+  </div>
+</div>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">7. What are the best practices for writing reusable and modular IaC templates?</h4>
+  <div class="qa-answer">
+    <p>Use parameters and variables, follow naming conventions, write small reusable modules, separate configs by environment, and maintain version control. Testing changes before deployment is also essential.</p>
+  </div>
+</div>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">8. How do you handle secrets and sensitive data in your IaC scripts?</h4>
+  <div class="qa-answer">
+    <p>Never hardcode secrets. Use services like AWS Secrets Manager, Parameter Store, or CI/CD environment variables. In Terraform, use encrypted state files and input variables carefully.</p>
+  </div>
+</div>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">9. What is drift detection in CloudFormation and how do you use it?</h4>
+  <div class="qa-answer">
+    <p>Drift detection identifies differences between deployed resources and the stack template. You can detect drift via AWS Console or CLI to ensure resources haven't been manually altered.</p>
+  </div>
+</div>
+
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">10. How do you perform version control for your infrastructure code?</h4>
+  <div class="qa-answer">
+    <p>By storing code in Git, using branches for changes, tagging versions, and integrating with CI/CD for review and deployment. Tools like GitHub, GitLab, or Bitbucket are commonly used.</p>
+  </div>
+</div>
+</div>
+    `,
+
+    Monitoring: `
+      <h3>Monitoring</h3>
+      <p>Monitor resources and applications in real-time to ensure availability, performance, and security.</p>
+      <ul>
+        <li><strong>CloudWatch:</strong> Logs, metrics, and alarms for AWS resources</li>
+        <li><strong>CloudTrail:</strong> Audit AWS account activity and API usage</li>
+        <li><strong>X-Ray:</strong> Trace and debug distributed applications</li>
+      </ul>
+    `,
+
+    Security: `
+      <h3>Security</h3>
+      <p>AWS offers robust identity, access, and encryption tools to secure your cloud environment.</p>
+      <ul>
+        <li><strong>IAM:</strong> Manage users, roles, and permissions</li>
+        <li><strong>KMS:</strong> Key Management Service for encryption</li>
+        <li><strong>Secrets Manager:</strong> Securely manage secrets and credentials</li>
+        <li><strong>Shield/WAF:</strong> Protect against DDoS and web exploits</li>
+      </ul>
+    `,
+
+    Container: `
+      <h3>Container Services</h3>
+      <p>AWS provides multiple services for running and managing containerized applications.</p>
+      <ul>
+        <li><strong>ECS:</strong> AWS-managed container orchestration</li>
+        <li><strong>EKS:</strong> Managed Kubernetes service</li>
+        <li><strong>Fargate:</strong> Run containers without managing servers</li>
+        <li><strong>ECR:</strong> Docker container registry</li>
+      </ul>
+    `
+  };
+
+  function showContent(topic) {
+    document.getElementById('aws-content').innerHTML = contentMap[topic];
+  }
+
+ function toggleAnswer(questionElement) {
+  const answer = questionElement.nextElementSibling;
+  answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+}
+
+</script>
 
 
 
