@@ -1423,3 +1423,20 @@ html {
 }
 
 
+
+.k8s-image {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.k8s-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -14,14 +14,14 @@
 
   <header class="header">
     <div class="container">
-      <a href="../index.html" class="logo">DPortfolio</a>
+      <a href="../main/index.html" class="logo">DPortfolio</a>
 
       <nav class="nav">
         <ul class="nav-links">
-          <li><a href="../index.html#home">Home</a></li>
-          <li><a href="../index.html#about">About</a></li>
-          <li><a href="../index.html#experience">Experience</a></li>
-          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../main/index.html#home">Home</a></li>
+          <li><a href="../main/index.html#about">About</a></li>
+          <li><a href="../main/index.html#experience">Experience</a></li>
+          <li><a href="../main/index.html#projects">Projects</a></li>
           <li><a href="../Blog/index.html">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -37,7 +37,574 @@
       <div class="hamburger" id="hamburger">&#9776;</div>
     </div>
   </header>
-  <h1>Hello thanks for visit Get updated soon</h1>
+
+  <section class="docker-doc">
+
+    <article>
+  <h2>What is Kubernetes</h2>
+  <p>Kubernetes is an open-source container management tool that automates container deployment, scaling & load balancing.</p>
+  <p>It schedules, runs, and manages isolated containers that are running on virtual/physical/cloud machines.</p>
+  <p><strong>it also known as is K8s.</strong></p>
+  <h3>Benefit</h3>
+  <ul>
+    <li>Container Orchestration</li>
+    <li>Scalability</li>
+    <li>Load Balancing</li>
+    <li>High Availability</li>
+    <li>Rollouts & Rollback</li>
+  </ul>
+</article>
+
+<article>
+  <h2>Architecture of Kubernetes</h2>
+  <p>
+    Kubernetes architecture is based on a <strong>cluster model</strong> that consists of a 
+    <strong>control plane (master node)</strong> and one or more <strong>worker nodes</strong>.
+  </p>
+
+<div class="k8s-image">
+  <img src="../assets/Blog/kubernetes-architecture.png" alt="Kubernetes Architecture Diagram">
+</div>
+
+  <h3>1. Master Node (Control Plane)</h3>
+  <p>Manages the overall cluster and makes global decisions:</p>
+  <ul>
+    <li><strong>API Server:</strong> Entry point for all administrative operations.</li>
+    <li><strong>Scheduler:</strong> Assigns Pods to available nodes based on resources.</li>
+    <li><strong>Controller Manager:</strong> Maintains cluster state and handles replication.</li>
+    <li><strong>etcd:</strong> A distributed key-value store used for cluster configuration and state.</li>
+  </ul>
+
+  <h3>2. Worker Nodes</h3>
+  <p>Responsible for running the actual containerized applications:</p>
+  <ul>
+    <li><strong>kubelet:</strong> Ensures containers are running properly.</li>
+    <li><strong>kube-proxy:</strong> Handles networking for Pods.</li>
+    <li><strong>Container Runtime (e.g., Docker, containerd):</strong> Runs containers inside Pods.</li>
+  </ul>
+
+  <p>
+    These components work together to provide container orchestration, scalability, 
+    high availability, and smooth application deployment in Kubernetes.
+  </p>
+</article>
+
+<article>
+  <h2>What is a Pod in Kubernetes?</h2>
+  <p>The smallest deployable unit that can contain one or more containers sharing the same network and storage.</p>
+</article>
+
+<article>
+  <h2>What is a ReplicaSet?</h2>
+  <p>Ensures a specified number of pod replicas are running at any time.</p>
+</article>
+
+<article>
+  <h2>What is a Pod Security Policy (PSP)?</h2>
+  <p>
+    PSPs help secure your Kubernetes cluster by ensuring pods only run with the necessary permissions and configurations, reducing security risks.
+  </p>
+  <p>For example, a PSP can ensure that:</p>
+  <ul>
+    <li>Pods cannot run as root.</li>
+    <li>Only specific volumes like <code>emptyDir</code> or <code>configMap</code> are used.</li>
+    <li>Privileged containers are restricted unless explicitly allowed.</li>
+  </ul>
+</article>
+
+<article>
+  <h2>What is a Namespace?</h2>
+  <p>
+    In Kubernetes, a namespace is a way to logically divide a cluster into separate virtual environments. It helps organize and manage resources (like pods, services, deployments, etc.), especially in environments with multiple teams or applications.
+  </p>
+  <p><strong>How to create a namespace:</strong></p>
+  <pre><code>kubectl create namespace my-namespace</code></pre>
+</article>
+
+<article>
+  <h2>How does Kubernetes handle application scaling?</h2>
+  <ul>
+    <li><strong>Horizontal Pod Autoscaler (HPA):</strong> Scales Pods based on CPU/memory utilization or custom metrics.</li>
+    <li><strong>Vertical Pod Autoscaler (VPA):</strong> Adjusts resource requests (CPU & Memory) of individual Pods.</li>
+  </ul>
+</article>
+
+<article>
+  <h2>How do you troubleshoot a failing Pod?</h2>
+  <ul>
+    <li>Check Pod status: <code>kubectl get pods</code></li>
+    <li>Describe the Pod: <code>kubectl describe pod &lt;pod-name&gt;</code></li>
+    <li>Check logs: <code>kubectl logs &lt;pod-name&gt;</code></li>
+  </ul>
+</article>
+
+<article>
+  <h2>What is the difference between ConfigMap and Secret?</h2>
+  <ul>
+    <li><strong>ConfigMap:</strong> Stores non-confidential configuration data.</li>
+    <li><strong>Secret:</strong> Stores sensitive data, such as passwords and API tokens.</li>
+  </ul>
+</article>
+
+
+<article>
+  <h2>1. Deployment YAML File</h2>
+  <p>
+    The <code>deployment.yml</code> file is used to manage the deployment of application containers.
+    It defines how many replicas should run, the container image, and other configurations related
+    to the application lifecycle.
+  </p>
+
+  <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+</code></pre>
+<li><strong>Cmd to run Deployment.yml <code>kubectl apply -f deployment.yaml</code></strong></li>
+
+  <h3>Key Sections:</h3>
+  <ul>
+    <li><strong>apiVersion:</strong> Defines the API version (e.g., <code>apps/v1</code>).</li>
+    <li><strong>kind:</strong> Specifies the resource type (<code>Deployment</code>).</li>
+    <li><strong>metadata:</strong> Contains name and labels for the deployment.</li>
+    <li><strong>spec:</strong>
+      <ul>
+        <li><strong>replicas:</strong> Number of desired application instances.</li>
+        <li><strong>selector:</strong> Matches labels for the pods managed by this deployment.</li>
+        <li><strong>template:</strong>
+          <ul>
+            <li><strong>metadata:</strong> Labels applied to the pods.</li>
+            <li><strong>spec:</strong> Defines container details like image, ports, and resources.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</article>
+
+<article>
+  <h2>2. Service YAML File</h2>
+  <p>
+    The <code>service.yml</code> file is used to expose your application to other applications or
+    external traffic. It defines how the pods are accessed within the cluster or externally.
+  </p>
+
+  <pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  labels:
+    app: my-app
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
+</code></pre>
+<li><strong>Cmd to run service.yml <code>kubectl apply -f service.yaml</code></strong></li>
+
+  <h3>Key Sections:</h3>
+  <ul>
+    <li><strong>apiVersion:</strong> Defines the API version (<code>v1</code> for services).</li>
+    <li><strong>kind:</strong> Specifies the resource type (<code>Service</code>).</li>
+    <li><strong>metadata:</strong> Contains name and labels for the service.</li>
+    <li><strong>spec:</strong>
+      <ul>
+        <li><strong>selector:</strong> Matches labels of the pods to route traffic.</li>
+        <li><strong>ports:</strong>
+          <ul>
+            <li><strong>protocol:</strong> Network protocol (usually <code>TCP</code>).</li>
+            <li><strong>port:</strong> Port exposed by the service.</li>
+            <li><strong>targetPort:</strong> Container port to forward traffic to.</li>
+          </ul>
+        </li>
+        <li><strong>type:</strong>
+          <ul>
+            <li><code>ClusterIP</code> (default): Internal-only access.</li>
+            <li><code>NodePort</code>: Exposes service on a static port on each node.</li>
+            <li><code>LoadBalancer</code>: Creates an external load balancer.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</article>
+
+
+<article>
+  <h2>Ingress and Egress in Kubernetes</h2>
+  <p>
+    In Kubernetes, <strong>ingress</strong> and <strong>egress</strong> describe the flow of network traffic into and out of the cluster or its resources. They are essential concepts for controlling how applications communicate both inside the cluster and with external systems.
+  </p>
+
+  <h3>Ingress</h3>
+  <p>
+    Ingress refers to incoming network traffic into a Kubernetes cluster or specific pods. It exposes HTTP and HTTPS routes from outside the cluster to services running inside. Traffic routing is managed by rules defined on the Ingress resource.
+  </p>
+
+  <pre><code>apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-example
+  rules:
+  - http:
+      paths:
+      - path: /testpath
+        pathType: Prefix
+        backend:
+          service:
+            name: test
+            port:
+              number: 80
+</code></pre>
+
+  <h4>Key Uses of Ingress:</h4>
+  <ul>
+    <li>Expose services to external clients.</li>
+    <li>Route traffic based on hostnames, URL paths, or protocols.</li>
+    <li>TLS/SSL termination for secure HTTPS connections.</li>
+    <li>Load balancing across multiple service instances.</li>
+    <li>Virtual hosting for multiple domains/subdomains.</li>
+  </ul>
+
+  <h3>Egress</h3>
+  <p>
+    Egress refers to outgoing network traffic from the Kubernetes cluster or its pods to external destinations. It is used to control how cluster applications communicate with external systems.
+  </p>
+
+  <pre><code>apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: restrict-egress
+spec:
+  podSelector:
+    matchLabels:
+      app: my-app
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 192.168.1.0/24
+    ports:
+    - protocol: TCP
+      port: 443
+</code></pre>
+
+  <h4>Key Uses of Egress:</h4>
+  <ul>
+    <li>Restrict outgoing traffic to specific external systems.</li>
+    <li>Monitor and log outgoing traffic for security and debugging.</li>
+    <li>Route traffic through proxies or gateways.</li>
+    <li>Apply firewall rules using network policies.</li>
+  </ul>
+</article>
+
+<article>
+  <h2>Probes and Their Types in Kubernetes</h2>
+  <p>
+    In Kubernetes, <strong>probes</strong> are used by the kubelet to determine the health and readiness of a container. These checks help Kubernetes manage the lifecycle of pods more efficiently by restarting, stopping, or routing traffic to containers based on their health.
+  </p>
+
+  <h3>Types of Probes</h3>
+  <p>Kubernetes provides three main types of probes:</p>
+
+  <ul>
+    <li><strong>Liveness Probe:</strong> Checks if the container is still running. If it fails, the container is restarted.</li>
+    <li><strong>Readiness Probe:</strong> Determines if the container is ready to accept traffic. If it fails, the pod is removed from service endpoints.</li>
+    <li><strong>Startup Probe:</strong> Used to check if an application within a container has started. Useful for slow-starting apps, preventing premature restarts.</li>
+  </ul>
+
+  <h3>Example: Liveness Probe</h3>
+  <pre><code>livenessProbe:
+  httpGet:
+    path: /healthz
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 10
+</code></pre>
+
+  <h3>Example: Readiness Probe</h3>
+  <pre><code>readinessProbe:
+  httpGet:
+    path: /ready
+    port: 8080
+  initialDelaySeconds: 5
+  periodSeconds: 10
+</code></pre>
+
+  <h3>Example: Startup Probe</h3>
+  <pre><code>startupProbe:
+  httpGet:
+    path: /startup
+    port: 8080
+  failureThreshold: 30
+  periodSeconds: 10
+</code></pre>
+
+  <h3>Key Configuration Fields:</h3>
+  <ul>
+    <li><strong>httpGet:</strong> Probe checks an HTTP endpoint.</li>
+    <li><strong>initialDelaySeconds:</strong> Wait time before the first probe.</li>
+    <li><strong>periodSeconds:</strong> Frequency of the probe execution.</li>
+    <li><strong>failureThreshold:</strong> Number of failures before action is taken.</li>
+    <li><strong>tcpSocket / exec:</strong> Alternative probe types using TCP connection or command execution.</li>
+  </ul>
+</article>
+
+<article>
+  <h2>What is Headless Service and StatefulSet in Kubernetes?</h2>
+  <p>
+    Kubernetes provides specialized ways to manage stateful applications and control how services discover pods. <strong>Headless Services</strong> and <strong>StatefulSets</strong> work together to manage stable network identities and persistent storage for stateful workloads.
+  </p>
+
+  <h3>Headless Service</h3>
+  <p>
+    A <strong>Headless Service</strong> is a service without a ClusterIP. Instead of load-balancing traffic, it allows clients to directly access individual pods using DNS records. This is essential for workloads that require stable network identities, like databases.
+  </p>
+
+  <pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: my-headless-service
+spec:
+  clusterIP: None
+  selector:
+    app: my-app
+  ports:
+    - port: 80
+</code></pre>
+
+  <h4>Key Features of Headless Service:</h4>
+  <ul>
+    <li>Set <code>clusterIP: None</code> to disable load balancing.</li>
+    <li>Provides DNS records for each pod (e.g., <code>pod-0.my-headless-service.default.svc.cluster.local</code>).</li>
+    <li>Enables direct communication with individual pods.</li>
+    <li>Works closely with StatefulSets for stable networking.</li>
+  </ul>
+
+  <h3>StatefulSet</h3>
+  <p>
+    A <strong>StatefulSet</strong> is a Kubernetes controller used to manage stateful applications. It ensures that pods are created in order, have persistent identities, and maintain stable storage.
+  </p>
+
+  <pre><code>apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-stateful-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  serviceName: "my-headless-service"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: app-container
+        image: my-app-image
+        volumeMounts:
+        - name: data
+          mountPath: /data
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+</code></pre>
+
+  <h4>Key Features of StatefulSet:</h4>
+  <ul>
+    <li>Stable network identity and DNS (e.g., <code>pod-0</code>, <code>pod-1</code>).</li>
+    <li>Persistent storage using <code>volumeClaimTemplates</code>.</li>
+    <li>Ordered, graceful deployment and scaling.</li>
+    <li>Useful for databases like MySQL, Cassandra, or Redis in master-slave setup.</li>
+  </ul>
+</article>
+
+<div class="interview-qa">
+  <h3>Kubernetes kubectl Commands</h3>
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">1. What does <code>kubectl get nodes</code> do?</h4>
+  <div class="qa-answer">
+    <p>It lists all the nodes in the Kubernetes cluster with basic info like status and roles.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">2. What is the purpose of <code>kubectl get pods</code>?</h4>
+  <div class="qa-answer">
+    <p>It displays all pods running in the default namespace.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">3. How to get pods from a specific namespace?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl get pods -n &lt;namespace&gt;</code> to list pods in a chosen namespace.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">4. How do you check available services?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl get svc</code> to list all services in the current namespace.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">5. How to describe a specific pod?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl describe pod &lt;pod-name&gt;</code> to view its detailed information.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">6. What does <code>kubectl logs &lt;pod-name&gt;</code> show?</h4>
+  <div class="qa-answer">
+    <p>It fetches logs from the default container of the specified pod.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">7. How do you get logs of a specific container inside a pod?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl logs &lt;pod-name&gt; -c &lt;container&gt;</code> to get container-specific logs.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">8. How to enter a running pod's shell?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl exec -it &lt;pod-name&gt; -- /bin/bash</code> for an interactive shell session.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">9. How to apply a YAML file configuration?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl apply -f &lt;file.yaml&gt;</code> to apply configuration from a file.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">10. How to delete a specific pod?</h4>
+  <div class="qa-answer">
+    <p>Run <code>kubectl delete pod &lt;pod-name&gt;</code> to remove a pod manually.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">11. How do I delete resources using a YAML file?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl delete -f &lt;file.yaml&gt;</code> to remove resources defined in the YAML.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">12. How to switch Kubernetes contexts?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl config use-context &lt;context&gt;</code> to change the working context.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">13. How can I list all events in a cluster?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl get events</code> for viewing cluster-level events (useful for debugging).</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">14. What is <code>kubectl rollout status</code> used for?</h4>
+  <div class="qa-answer">
+    <p>It checks the rollout status of a deployment to see if it's successfully updated.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">15. How to rollback a deployment?</h4>
+  <div class="qa-answer">
+    <p>Run <code>kubectl rollout undo deployment &lt;name&gt;</code> to revert to the previous version.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">16. How do you expose a deployment using NodePort?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl expose deployment &lt;name&gt; --type=NodePort --port=80</code> to create a service.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">17. What does <code>kubectl get all</code> show?</h4>
+  <div class="qa-answer">
+    <p>It lists all running resources like pods, services, and deployments in the namespace.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">18. How to check CPU/Memory usage of pods?</h4>
+  <div class="qa-answer">
+    <p>Run <code>kubectl top pods</code> to see current resource usage by each pod.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">19. How to cordon a node?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl cordon &lt;node-name&gt;</code> to mark it unschedulable.</p>
+  </div>
+</div>
+
+<div class="qa-item">
+  <h4 class="qa-question" onclick="toggleAnswer(this)">20. How to safely drain a node for maintenance?</h4>
+  <div class="qa-answer">
+    <p>Use <code>kubectl drain &lt;node-name&gt;</code> to evict all pods safely before maintenance.</p>
+  </div>
+</div>
+</div>
+  </section>
+
+
+<script>
+  function toggleAnswer(element) {
+    const answer = element.nextElementSibling;
+    const isOpen = answer.style.display === 'block';
+    answer.style.display = isOpen ? 'none' : 'block';
+  }
+</script>
+
 
 <!-- Contact + Footer -->
   <section class="contact-footer-wrapper" id="contact">
