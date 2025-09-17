@@ -4,9 +4,7 @@ const element = document.getElementById("animated-heading");
 const texts = [
   "Hi, I'm Dipesh Mandal",
   "Cloud & DevOps Engineer",
-  "AWS & Automation Specialist",
-  "Infrastructure & CI/CD Expert",
-  "Linux System Administrator"
+  "Linux Sys Admin"
 ];
 
 let textIndex = 0;
