@@ -1042,12 +1042,10 @@ html {
 @media (max-width: 768px) {
   .project-grid {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     gap: 2rem;
     padding-left: 10px;
     padding-right: 10px;
+    overflow: hidden;          /* ✅ disable scrolling */
   }
 
   .project-card {
