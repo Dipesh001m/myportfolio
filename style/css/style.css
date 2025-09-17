@@ -209,6 +209,7 @@ html {
   .blurry-card {
     padding: 30px 10px;
     min-height: auto;
+    margin-top: 0px;
   }
 
   .blurry-card img {
