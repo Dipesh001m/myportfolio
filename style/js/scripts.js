@@ -191,14 +191,13 @@ animatedImages.forEach(img => {
 
 
 
-
 // Project Carousel 
-// Show 3 projects at a time, with left/right arrows to navigate
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const projects = document.querySelectorAll(".project-card");
   const leftArrow = document.querySelector(".left-arrow");
   const rightArrow = document.querySelector(".right-arrow");
-  const visibleCount = 3; // Number of projects visible at once
+
+  let visibleCount = window.innerWidth <= 768 ? 1 : 3; // ✅ responsive visible count
   let startIndex = 0;
 
   function updateVisibleProjects() {
@@ -227,6 +226,15 @@ animatedImages.forEach(img => {
       startIndex++;
       updateVisibleProjects();
     }
+  });
+
+  // ✅ Recalculate visibleCount on window resize
+  window.addEventListener("resize", () => {
+    visibleCount = window.innerWidth <= 768 ? 1 : 3;
+    if (startIndex + visibleCount > projects.length) {
+      startIndex = Math.max(0, projects.length - visibleCount);
+    }
+    updateVisibleProjects();
   });
 
   updateVisibleProjects();
