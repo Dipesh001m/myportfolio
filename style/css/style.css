@@ -208,8 +208,8 @@ html {
 @media (max-width: 768px) {
   .blurry-card {
     padding: 30px 10px;
-    /* min-height: auto; */
-    margin-top: 0px;
+    min-height: auto;
+    margin-top: 0;
   }
 
   .blurry-card img {
